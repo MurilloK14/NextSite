@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Comp A — Nexora Web · Guia Editorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1A1A1A;--ground:#F5F0E8;--green:#1B4D3E;--red:#B83A2A;--muted:#6B6256;--white:#FFFFFF}
+body{background:var(--ground);color:var(--ink);font-family:"Barlow",sans-serif;width:1280px;min-height:860px;overflow-x:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 64px;border-bottom:2px solid var(--ink);background:var(--ground)}
+.nav-logo{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:1.5rem;letter-spacing:-0.02em;text-transform:uppercase}
+.nav-logo span{color:var(--red)}
+.nav-links{display:flex;gap:32px;font-size:0.875rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;list-style:none}
+.nav-cta{background:var(--green);color:var(--white);font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:0.05em;text-transform:uppercase;padding:10px 22px;border:2px solid var(--green)}
+.hero{display:grid;grid-template-columns:1fr 480px;min-height:680px;border-bottom:2px solid var(--ink)}
+.hero-left{padding:64px;border-right:2px solid var(--ink);display:flex;flex-direction:column;justify-content:center;gap:0}
+.hero-edition-label{font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);border-top:2px solid var(--ink);padding-top:12px;margin-bottom:28px;display:inline-block;width:fit-content}
+.hero-headline{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:5.5rem;line-height:0.92;letter-spacing:-0.02em;text-transform:uppercase;margin-bottom:28px}
+.hero-headline em{font-style:normal;color:var(--red);display:block}
+.hero-body{font-family:"Lora",serif;font-size:1.125rem;line-height:1.6;max-width:480px;margin-bottom:36px}
+.hero-price-row{display:flex;align-items:baseline;gap:16px;margin-bottom:36px;padding:20px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.hero-price-label{font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
+.hero-price{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:3.5rem;letter-spacing:-0.02em;color:var(--red);line-height:1}
+.hero-price-note{font-size:0.8rem;color:var(--muted)}
+.hero-actions{display:flex;gap:16px;align-items:center}
+.btn-primary{background:var(--green);color:var(--white);font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;padding:16px 32px;border:2px solid var(--green);cursor:pointer;display:inline-block}
+.btn-secondary{background:transparent;color:var(--ink);font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;padding:16px 32px;border:2px solid var(--ink);cursor:pointer;display:inline-block}
+.hero-right{background:var(--white);display:flex;align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden}
+.map-grid{width:400px;height:520px;position:relative;border:2px solid var(--ink);background:#F8F8F6;overflow:hidden}
+.map-street-h{position:absolute;left:0;right:0;height:28px;background:#E8E4DC;border-top:1px solid #CCC;border-bottom:1px solid #CCC}
+.map-street-v{position:absolute;top:0;bottom:0;width:28px;background:#E8E4DC;border-left:1px solid #CCC;border-right:1px solid #CCC}
+.map-block{position:absolute;background:#EDE9E0;border:1px solid #CCC}
+.map-pin{position:absolute;display:flex;flex-direction:column;align-items:center;gap:2px}
+.pin-dot{width:32px;height:32px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;border:2px solid var(--ink);position:relative}
+.pin-dot-inner{transform:rotate(45deg);font-size:13px;line-height:1}
+.pin-label{font-size:0.6rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);background:var(--white);padding:2px 6px;border:1px solid var(--ink);white-space:nowrap}
+.pin-check{position:absolute;top:-5px;right:-5px;width:13px;height:13px;background:var(--green);border-radius:50%;color:white;font-size:7px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.map-pin-main{position:absolute;top:175px;left:148px;display:flex;flex-direction:column;align-items:center;gap:4px;z-index:10}
+.pin-main-dot{width:48px;height:48px;background:var(--red);border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--ink)}
+.pin-main-inner{transform:rotate(45deg);color:white;font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:18px}
+.pin-main-label{background:var(--red);color:white;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;padding:3px 8px;border:2px solid var(--ink);white-space:nowrap}
+.map-title-block{position:absolute;top:12px;left:12px;background:var(--green);color:white;padding:8px 14px;border:2px solid var(--ink)}
+.map-title-text{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase}
+.map-scale{position:absolute;bottom:12px;right:12px;font-family:"Barlow",sans-serif;font-size:0.55rem;color:var(--muted);display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.map-scale-bar{width:60px;height:4px;background:repeating-linear-gradient(90deg,var(--ink) 0,var(--ink) 15px,transparent 15px,transparent 30px);border:1px solid var(--ink)}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-logo">Nexora <span>Web</span></div>
+  <ul class="nav-links"><li>Servicos</li><li>Portfolio</li><li>Planos</li><li>Orcamento</li></ul>
+  <a class="nav-cta">Quero meu site</a>
+</nav>
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-edition-label">Criacao de sites · Edicao 2026</span>
+    <h1 class="hero-headline">Seu negocio<br>merece estar<br><em>no mapa.</em></h1>
+    <p class="hero-body">Criamos sites rapidos, profissionais e que vendem — para barbearias, clinicas, lojas e todo tipo de negocio que quer crescer online.</p>
+    <div class="hero-price-row">
+      <span class="hero-price-label">A partir de</span>
+      <span class="hero-price">R$ 497</span>
+      <span class="hero-price-note">· entrega em ate 7 dias</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn-primary">Quero meu site agora</a>
+      <a class="btn-secondary">Ver portfolio</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="map-grid">
+      <div class="map-street-h" style="top:120px"></div>
+      <div class="map-street-h" style="top:280px"></div>
+      <div class="map-street-h" style="top:420px"></div>
+      <div class="map-street-v" style="left:120px"></div>
+      <div class="map-street-v" style="left:260px"></div>
+      <div class="map-block" style="top:30px;left:30px;width:80px;height:80px"></div>
+      <div class="map-block" style="top:30px;left:150px;width:100px;height:80px"></div>
+      <div class="map-block" style="top:30px;left:290px;width:90px;height:80px"></div>
+      <div class="map-block" style="top:150px;left:30px;width:80px;height:120px"></div>
+      <div class="map-block" style="top:150px;left:290px;width:90px;height:120px"></div>
+      <div class="map-block" style="top:310px;left:30px;width:80px;height:100px"></div>
+      <div class="map-block" style="top:310px;left:150px;width:100px;height:100px"></div>
+      <div class="map-block" style="top:310px;left:290px;width:90px;height:100px"></div>
+      <div class="map-block" style="top:430px;left:30px;width:80px;height:70px"></div>
+      <div class="map-block" style="top:430px;left:150px;width:100px;height:70px"></div>
+      <div class="map-block" style="top:430px;left:290px;width:90px;height:70px"></div>
+      <div class="map-pin" style="top:46px;left:44px"><div class="pin-dot" style="background:#E8DFD0"><span class="pin-dot-inner">&#9986;</span><div class="pin-check">&#10003;</div></div><span class="pin-label">Barbearia</span></div>
+      <div class="map-pin" style="top:46px;left:164px"><div class="pin-dot" style="background:#D0E8DF"><span class="pin-dot-inner">&#43;</span><div class="pin-check">&#10003;</div></div><span class="pin-label">Clinica</span></div>
+      <div class="map-pin" style="top:326px;left:44px"><div class="pin-dot" style="background:#E8E0D0"><span class="pin-dot-inner">&#9749;</span><div class="pin-check">&#10003;</div></div><span class="pin-label">Cafe</span></div>
+      <div class="map-pin" style="top:326px;left:304px"><div class="pin-dot" style="background:#D0D8E8"><span class="pin-dot-inner">&#127968;</span><div class="pin-check">&#10003;</div></div><span class="pin-label">Loja</span></div>
+      <div class="map-pin-main"><div class="pin-main-dot"><span class="pin-main-inner">N</span></div><span class="pin-main-label">nexoraweb.com.br</span></div>
+      <div class="map-title-block"><div class="map-title-text">Negocios Digitais</div></div>
+      <div class="map-scale"><div class="map-scale-bar"></div><span>nexoraweb.com.br</span></div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

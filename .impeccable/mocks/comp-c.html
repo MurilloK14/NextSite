@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<title>Comp C — Nexora Web · Selo de Garantia</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Lora:ital,wght@0,400;1,400&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1A1A1A;--green:#1B4D3E;--red:#B83A2A;--cream:#F5F0E8;--gold:#C9963C;--white:#FFFFFF;--muted:#6B6256}
+body{background:var(--green);color:var(--white);font-family:"Barlow",sans-serif;width:1280px;overflow-x:hidden}
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 64px;border-bottom:1px solid rgba(255,255,255,0.2)}
+.nav-logo{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:1.5rem;letter-spacing:-0.01em;text-transform:uppercase;color:white}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;font-size:0.8rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;list-style:none;color:rgba(255,255,255,0.7)}
+.nav-cta{background:var(--red);color:white;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:0.06em;text-transform:uppercase;padding:10px 20px;border:2px solid white}
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 520px;min-height:700px;padding:0}
+.hero-left{padding:64px 64px 64px 64px;display:flex;flex-direction:column;justify-content:center}
+/* Linha superior */
+.hero-rule{width:60px;height:3px;background:var(--gold);margin-bottom:28px}
+.hero-kicker-row{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.hero-kicker{font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6)}
+/* Headline */
+.hero-headline{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:5.2rem;line-height:0.9;letter-spacing:-0.02em;text-transform:uppercase;margin-bottom:28px;color:white}
+.hero-headline .gold{color:var(--gold)}
+/* Subheadline */
+.hero-sub{font-family:"Lora",serif;font-size:1.1rem;line-height:1.65;color:rgba(255,255,255,0.85);max-width:420px;margin-bottom:40px}
+/* Price strip */
+.price-strip{background:var(--red);padding:20px 28px;margin-bottom:32px;display:inline-flex;align-items:baseline;gap:14px;border-left:5px solid var(--gold)}
+.price-from{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.75)}
+.price-main{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:3.2rem;line-height:1;color:white;letter-spacing:-0.02em}
+.price-aside{font-size:0.78rem;color:rgba(255,255,255,0.7);font-style:italic}
+/* CTAs */
+.hero-actions{display:flex;gap:14px}
+.btn-p{background:white;color:var(--green);font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;padding:16px 32px;border:2px solid white;cursor:pointer}
+.btn-s{background:transparent;color:white;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;padding:16px 32px;border:2px solid rgba(255,255,255,0.5);cursor:pointer}
+/* Selos lado direito */
+.hero-right{display:flex;align-items:center;justify-content:center;padding:48px;border-left:1px solid rgba(255,255,255,0.15)}
+.seals-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:100%}
+.seal{background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.18);padding:28px 24px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;position:relative}
+.seal-number{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:3rem;line-height:1;color:var(--gold);letter-spacing:-0.03em}
+.seal-title{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.05rem;text-transform:uppercase;letter-spacing:0.04em;color:white}
+.seal-body{font-size:0.8rem;line-height:1.5;color:rgba(255,255,255,0.65)}
+.seal-check{position:absolute;top:14px;right:14px;width:22px;height:22px;background:var(--green);border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--gold)}
+/* Selo destaque */
+.seal.featured{background:var(--red);border-color:var(--gold);grid-column:span 2}
+.seal.featured .seal-number{font-size:2.2rem}
+.seal.featured .seal-body{color:rgba(255,255,255,0.8)}
+/* Rodape confiança */
+.trust-bar{display:flex;align-items:center;justify-content:center;gap:40px;padding:18px 64px;border-top:1px solid rgba(255,255,255,0.15);background:rgba(0,0,0,0.15)}
+.trust-item{font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:8px}
+.trust-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-logo">Nexora <span>Web</span></div>
+  <ul class="nav-links"><li>Servicos</li><li>Portfolio</li><li>Planos</li><li>Orcamento</li></ul>
+  <a class="nav-cta">Quero meu site</a>
+</nav>
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-rule"></div>
+    <div class="hero-kicker-row"><span class="hero-kicker">Nexora Web · Criacao de Sites</span></div>
+    <h1 class="hero-headline">Seu negocio<br>merece um site<br><span class="gold">que vende.</span></h1>
+    <p class="hero-sub">Sites profissionais para barbearias, clinicas, restaurantes e qualquer negocio que precisa aparecer e crescer online.</p>
+    <div class="price-strip">
+      <span class="price-from">Comece por</span>
+      <span class="price-main">R$ 497</span>
+      <span class="price-aside">entrega em ate 7 dias · sem surpresas</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn-p">Quero meu site agora</a>
+      <a class="btn-s">Ver portfolio</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="seals-grid">
+      <div class="seal">
+        <div class="seal-check">&#10003;</div>
+        <div class="seal-number">100%</div>
+        <div class="seal-title">Personalizado</div>
+        <div class="seal-body">Design feito sob medida para o seu negocio. Nenhum template generico.</div>
+      </div>
+      <div class="seal">
+        <div class="seal-check">&#10003;</div>
+        <div class="seal-number">7d</div>
+        <div class="seal-title">Entrega Rapida</div>
+        <div class="seal-body">Da aprovacao ao ar, em media 7 dias uteis.</div>
+      </div>
+      <div class="seal">
+        <div class="seal-check">&#10003;</div>
+        <div class="seal-number">&#9650;3x</div>
+        <div class="seal-title">Mais Contatos</div>
+        <div class="seal-body">Sites otimizados para gerar mensagens e ligacoes para o seu negocio.</div>
+      </div>
+      <div class="seal">
+        <div class="seal-check">&#10003;</div>
+        <div class="seal-number">R$0</div>
+        <div class="seal-title">Orcamento Gratis</div>
+        <div class="seal-body">Sem compromisso. Voce pede, a gente responde em ate 24h.</div>
+      </div>
+      <div class="seal featured">
+        <div class="seal-check">&#9733;</div>
+        <div style="display:flex;align-items:baseline;gap:12px"><div class="seal-number">R$ 497</div><div class="seal-title">· Plano Presenca Digital</div></div>
+        <div class="seal-body">Landing page profissional, responsiva, com botao WhatsApp, formulario de contato e SEO basico. Tudo que voce precisa para comecar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-dot"></div>Design responsivo incluso</div>
+  <div class="trust-item"><div class="trust-dot"></div>Sem mensalidade obrigatoria</div>
+  <div class="trust-item"><div class="trust-dot"></div>Suporte pos-entrega</div>
+  <div class="trust-item"><div class="trust-dot"></div>Aprovacao antes de publicar</div>
+</div>
+</body>
+</html>

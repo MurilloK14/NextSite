@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<title>Comp B — Nexora Web · Parede de Conteudo</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Lora:wght@400;600&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1A1A1A;--ground:#FFFFFF;--green:#1B4D3E;--red:#B83A2A;--cream:#F5F0E8;--muted:#6B6256;--border:#1A1A1A}
+body{background:var(--ground);color:var(--ink);font-family:"Barlow",sans-serif;width:1280px;overflow-x:hidden}
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 56px;border-bottom:3px solid var(--border);background:var(--green)}
+.nav-logo{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:1.6rem;letter-spacing:-0.01em;text-transform:uppercase;color:white}
+.nav-logo span{color:#E8B86D}
+.nav-links{display:flex;gap:28px;font-size:0.8rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;list-style:none;color:rgba(255,255,255,0.8)}
+.nav-cta{background:var(--red);color:white;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:0.06em;text-transform:uppercase;padding:10px 20px;border:2px solid white}
+/* HEADLINE BAR */
+.headline-bar{background:var(--red);padding:10px 56px;border-bottom:2px solid var(--border)}
+.ticker-text{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;color:white;display:flex;gap:48px}
+.ticker-sep{color:rgba(255,255,255,0.5)}
+/* HERO - GRID EDITORIAL */
+.hero{display:grid;grid-template-columns:320px 1fr 320px;min-height:640px;border-bottom:2px solid var(--border)}
+/* Col esquerda: numero de edicao + categorias */
+.hero-sidebar-left{border-right:2px solid var(--border);padding:32px 28px;background:var(--cream);display:flex;flex-direction:column;gap:0}
+.edition-num{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:6rem;line-height:1;color:var(--green);letter-spacing:-0.04em;border-bottom:2px solid var(--border);padding-bottom:16px;margin-bottom:24px}
+.sidebar-section-label{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.sidebar-service{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #DDD;font-size:0.875rem;font-weight:600}
+.sidebar-service-icon{width:28px;height:28px;background:var(--green);display:flex;align-items:center;justify-content:center;color:white;font-size:12px;flex-shrink:0}
+/* Col centro: conteudo principal */
+.hero-center{padding:40px 48px;border-right:2px solid var(--border);display:flex;flex-direction:column;justify-content:space-between}
+.hero-overline{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding-bottom:14px;border-bottom:1px solid #CCC;margin-bottom:24px}
+.hero-headline{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:4.8rem;line-height:0.9;letter-spacing:-0.02em;text-transform:uppercase;margin-bottom:24px}
+.hero-headline .accent{color:var(--red);display:block}
+.hero-deck{font-family:"Lora",serif;font-size:1.05rem;line-height:1.65;color:#333;margin-bottom:32px;max-width:440px}
+.hero-price-box{background:var(--green);padding:20px 28px;margin-bottom:28px;display:inline-flex;align-items:baseline;gap:12px}
+.price-from{font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7)}
+.price-val{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:3rem;color:white;letter-spacing:-0.02em;line-height:1}
+.price-note{font-size:0.75rem;color:rgba(255,255,255,0.7)}
+.hero-cta-row{display:flex;gap:12px}
+.btn-p{background:var(--red);color:white;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:0.06em;text-transform:uppercase;padding:14px 28px;border:2px solid var(--red)}
+.btn-s{background:transparent;color:var(--ink);font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:0.06em;text-transform:uppercase;padding:14px 28px;border:2px solid var(--ink)}
+/* Col direita: mini portfolio */
+.hero-sidebar-right{padding:28px 24px;background:var(--ground);display:flex;flex-direction:column;gap:0}
+.portfolio-label{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);padding-bottom:10px;border-bottom:2px solid var(--border);margin-bottom:16px}
+.portfolio-mini-card{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #EEE}
+.portfolio-mini-card:last-child{border-bottom:none;margin-bottom:0}
+.mini-card-thumb{width:100%;height:72px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;border:1px solid #DDD}
+.mini-card-name{font-size:0.8rem;font-weight:700;margin-bottom:2px}
+.mini-card-type{font-size:0.65rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
+/* MINI STATS */
+.hero-stats{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:2px solid var(--border);border-bottom:2px solid var(--border)}
+.stat{padding:20px 56px 20px;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-num{font-family:"Barlow Condensed",sans-serif;font-weight:900;font-size:2.5rem;letter-spacing:-0.02em;color:var(--green)}
+.stat-label{font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-logo">Nexora <span>Web</span></div>
+  <ul class="nav-links"><li>Servicos</li><li>Portfolio</li><li>Planos</li><li>Orcamento</li></ul>
+  <a class="nav-cta">Quero meu site</a>
+</nav>
+<div class="headline-bar">
+  <div class="ticker-text">
+    <span>Sites a partir de R$ 497</span>
+    <span class="ticker-sep">&#9679;</span>
+    <span>Entrega em ate 7 dias</span>
+    <span class="ticker-sep">&#9679;</span>
+    <span>Design personalizado</span>
+    <span class="ticker-sep">&#9679;</span>
+    <span>Sem taxa de adesao</span>
+    <span class="ticker-sep">&#9679;</span>
+    <span>Gratis solicitar orcamento</span>
+  </div>
+</div>
+<section class="hero">
+  <div class="hero-sidebar-left">
+    <div class="edition-num">26</div>
+    <div class="sidebar-section-label">O que fazemos</div>
+    <div class="sidebar-service"><div class="sidebar-service-icon">&#9700;</div>Landing Pages</div>
+    <div class="sidebar-service"><div class="sidebar-service-icon">&#9760;</div>Sites Institucionais</div>
+    <div class="sidebar-service"><div class="sidebar-service-icon">&#9635;</div>Portfolios</div>
+    <div class="sidebar-service"><div class="sidebar-service-icon">&#9646;</div>E-commerce</div>
+    <div class="sidebar-service"><div class="sidebar-service-icon">&#9998;</div>Redesign</div>
+    <div class="sidebar-service"><div class="sidebar-service-icon">&#9881;</div>Manutencao</div>
+  </div>
+  <div class="hero-center">
+    <div>
+      <div class="hero-overline">Nexora Web · Criacao de Sites Profissionais</div>
+      <h1 class="hero-headline">Seu negocio<br>na internet<br><span class="accent">agora.</span></h1>
+      <p class="hero-deck">Sites modernos, rapidos e que convertem visitantes em clientes. Para barbearias, clinicas, restaurantes e qualquer negocio que quer crescer.</p>
+    </div>
+    <div>
+      <div class="hero-price-box">
+        <span class="price-from">A partir de</span>
+        <span class="price-val">R$ 497</span>
+        <span class="price-note">· sem surpresas</span>
+      </div>
+      <div class="hero-cta-row">
+        <a class="btn-p">Solicitar orcamento gratis</a>
+        <a class="btn-s">Ver portfolio</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-sidebar-right">
+    <div class="portfolio-label">Projetos recentes</div>
+    <div class="portfolio-mini-card">
+      <div class="mini-card-thumb" style="background:#1B1B1B;color:#E8B86D">BarberPro</div>
+      <div class="mini-card-name">BarberPro</div>
+      <div class="mini-card-type">Landing Page</div>
+    </div>
+    <div class="portfolio-mini-card">
+      <div class="mini-card-thumb" style="background:#1B4D3E;color:white">Clinica Vita</div>
+      <div class="mini-card-name">Clinica Vita</div>
+      <div class="mini-card-type">Site Institucional</div>
+    </div>
+    <div class="portfolio-mini-card">
+      <div class="mini-card-thumb" style="background:#F5F0E8;color:#1A1A1A;border:1px solid #CCC">Cafe Aurora</div>
+      <div class="mini-card-name">Cafe Aurora</div>
+      <div class="mini-card-type">Restaurante</div>
+    </div>
+  </div>
+</section>
+<div class="hero-stats">
+  <div class="stat" style="padding-left:56px"><div class="stat-num">+50</div><div class="stat-label">Projetos entregues</div></div>
+  <div class="stat" style="padding-left:56px"><div class="stat-num">7d</div><div class="stat-label">Prazo medio de entrega</div></div>
+  <div class="stat" style="padding-left:56px"><div class="stat-num">R$497</div><div class="stat-label">Entrada acessivel</div></div>
+</div>
+</body>
+</html>
