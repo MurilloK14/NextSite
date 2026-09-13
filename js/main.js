@@ -58,8 +58,9 @@ function initScrollSequence() {
     canvas.style.width  = canvasW + 'px';
     canvas.style.height = canvasH + 'px';
     ctx.scale(dpr, dpr);
+    // Setup for maximum visual quality
     ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = 'medium';
+    ctx.imageSmoothingQuality = 'high';
     computeRect();
     lastFrameIdx = -1; // force redraw after resize
   }

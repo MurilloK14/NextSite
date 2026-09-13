@@ -184,11 +184,10 @@ p { color: var(--text-muted); }
 .mobile-nav-links .nav-link { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; color: var(--text-main); }
 
 /* =====================================================
-   HERO SEQUENCE — Image Canvas
+   HERO SCROLL SEQUENCE
    ===================================================== */
 .scroll-sequence {
   position: relative;
-  z-index: 2;
   background: #000;
 }
 .seq-wrapper {
