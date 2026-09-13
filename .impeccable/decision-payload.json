@@ -1,0 +1,80 @@
+{
+  "title": "Choose the visual world for Nexora Web",
+  "question": "The roll assigned The High-Speed Transit Terminal. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Transit Terminal",
+      "kicker": "THE ROLL",
+      "lineage": "high-speed rail ticket kiosks",
+      "thesis": "Fast, highly-converted digital presence delivered like a premium express service.",
+      "palette": [
+        "#0f172a",
+        "#f59e0b",
+        "#10b981",
+        "#f8fafc"
+      ],
+      "materials": [
+        "matte metal",
+        "illuminated LED type"
+      ],
+      "viewport": "A departure board aesthetic guiding the user immediately to the 'solicitar orçamento' action.",
+      "risk": "Might feel too utilitarian if the typography isn't razor sharp.",
+      "raised": [
+        {
+          "from": "challenger-jackfield",
+          "raise": "Adopts the amber-on-black discipline and high-contrast typography for unmissable CTAs."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.png"
+    },
+    {
+      "id": "challenger-daylight",
+      "label": "The Architect's Section",
+      "verdict": "competitive",
+      "lineage": "inhabitable space, daylight sections",
+      "thesis": "Nexora as a premium, sunlit gallery space focusing entirely on the finished product.",
+      "palette": [
+        "#f8f9fa",
+        "#343a40",
+        "#d4af37"
+      ],
+      "materials": [
+        "limewash white walls",
+        "sunbeam gold accents"
+      ],
+      "viewport": "Clean, spaced-out sections scrolling like an architectural draft coming to life.",
+      "case": "Fuses beautifully: sells the 'premium' feel perfectly, but risks feeling a bit too slow/artistic for small businesses wanting quick results.",
+      "risk": "Too much whitespace might make the R$ 497 price point feel disconnected.",
+      "comp": ".impeccable/mocks/decision/challenger-daylight.png"
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "The SaaS Standard",
+    "thesis": "The classic, reliable landing page formula every competitor uses.",
+    "palette": [
+      "#ffffff",
+      "#111827",
+      "#2563eb"
+    ],
+    "materials": [
+      "clean grid",
+      "floating device mockups"
+    ],
+    "viewport": "Standard hero, 3-column features, and a 3-tier pricing table at the bottom.",
+    "risk": "Indistinguishable from other generic digital agencies.",
+    "comp": ".impeccable/mocks/decision/canon.png"
+  },
+  "steer": true
+}
