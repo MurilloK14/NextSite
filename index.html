@@ -54,43 +54,47 @@
          HERO SEQUENCE — SCROLL DRIVEN
          ==================================================== -->
     <section id="hero-sequence" class="scroll-sequence theme-dark">
+      <!-- Loading indicator -->
+      <div id="seq-loading" class="seq-loading">
+        <div class="spinner"></div>
+      </div>
+
       <div class="seq-wrapper">
         <div class="seq-sticky">
           
           <!-- 1. Canvas for Image Sequence -->
           <canvas id="seq-canvas"></canvas>
           
-          <!-- 2. Dark Overlay (bridges into Portfolio) -->
+          <!-- 2. Dark Overlay (bridges into Services) -->
           <div class="seq-dark-overlay"></div>
 
           <!-- 3. Overlay Contents -->
           <div class="seq-content">
             
-            <!-- Intro Text (Top Center) -->
-            <div class="seq-group" id="seq-intro">
+            <!-- Intro Text (Visible when notebook is closed, top center) -->
+            <div class="seq-group seq-intro-visible" id="seq-intro">
               <span class="seq-pre-title">Seu negócio começa aqui</span>
               <h1 class="seq-main-title">Transformamos ideias em <span class="text-accent">experiências digitais.</span></h1>
               <a href="#orcamento" class="btn btn-primary seq-btn btn-whatsapp" style="margin-top: 1.5rem;" data-message="Olá! Quero transformar meu negócio digital.">Quero meu site <span class="arrow-icon">→</span></a>
             </div>
 
-            <!-- Services Text (Satellite Cards) -->
-            <div class="seq-group" id="seq-services">
-              
-              <!-- Card 1 (Left) -->
-              <div class="seq-srv-item glass-card card-left">
+            <!-- Satellite Cards (appear around notebook as it opens) -->
+            <div id="seq-services">
+              <!-- Card 1 — Left -->
+              <div class="glass-card card-left seq-card" data-delay="0">
                 <div class="card-icon">
-                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
                 </div>
                 <div class="card-text">
-                  <h3>Sites personalizados</h3>
+                  <h3>Sites Personalizados</h3>
                   <p>Design exclusivo para a identidade do seu negócio.</p>
                 </div>
               </div>
 
-              <!-- Card 2 (Top Right) -->
-              <div class="seq-srv-item glass-card card-top-right">
+              <!-- Card 2 — Top Right -->
+              <div class="glass-card card-top-right seq-card" data-delay="1">
                 <div class="card-icon">
-                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                 </div>
                 <div class="card-text">
                   <h3>Landing Pages</h3>
@@ -98,19 +102,45 @@
                 </div>
               </div>
 
-              <!-- Card 3 (Bottom Right) -->
-              <div class="seq-srv-item glass-card card-bottom-right">
+              <!-- Card 3 — Bottom Right -->
+              <div class="glass-card card-bottom-right seq-card" data-delay="2">
                 <div class="card-icon">
-                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
                 </div>
                 <div class="card-text">
                   <h3>Soluções Web</h3>
-                  <p>Sistemas e experiências digitais desenvolvidos para as necessidades do seu negócio.</p>
+                  <p>Sistemas e experiências digitais desenvolvidos sob medida.</p>
                 </div>
               </div>
-
             </div>
 
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         SERVICES (Premium Transition)
+         ==================================================== -->
+    <section id="servicos" class="section premium-services theme-dark">
+      <div class="container">
+        <div class="services-header">
+          <h2 class="h1">Seu site. <span class="text-accent">Do seu jeito.</span></h2>
+          <p class="services-subtitle">Cada negócio tem uma história. Seu site também deve ter.</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-item reveal">
+            <h3>SITES PERSONALIZADOS</h3>
+            <p>Design exclusivo para a identidade do seu negócio.</p>
+          </div>
+          <div class="service-item reveal" style="transition-delay: 100ms;">
+            <h3>LANDING PAGES</h3>
+            <p>Páginas focadas em apresentar sua empresa e gerar resultados.</p>
+          </div>
+          <div class="service-item reveal" style="transition-delay: 200ms;">
+            <h3>SOLUÇÕES WEB</h3>
+            <p>Sistemas e experiências digitais desenvolvidos para as necessidades do seu negócio.</p>
           </div>
         </div>
       </div>
@@ -138,7 +168,7 @@
             </div>
           </article>
 
-          <article class="portfolio-demo-card reveal" style="transition-delay: 0.2s">
+          <article class="portfolio-demo-card reveal" style="transition-delay: 0.15s">
             <div class="portfolio-demo-img">
               <img src="videos e fotos/Captura de tela 2026-09-11 164315.png" alt="Mockup Clínica Vita">
             </div>
@@ -355,9 +385,9 @@
     <!-- BOTTOM CTA (FINAL QUERO MEU SITE) -->
     <section class="section bottom-cta final-cta-section theme-dark reveal">
       <div class="container center">
+        <p class="final-desc">Você cuida do seu negócio.<br/>A gente cuida da sua presença digital.</p>
+        <button class="btn btn-primary btn-cta btn-whatsapp" style="margin-bottom: 3rem;" data-message="Estou pronto para começar meu projeto.">Comece seu projeto <span class="arrow-icon">→</span></button>
         <h2 class="display final-title">QUERO MEU SITE</h2>
-        <p class="final-desc">O encerramento perfeito para o seu novo projeto digital.</p>
-        <button class="btn btn-primary btn-whatsapp" data-message="Estou pronto para começar meu projeto.">Comece seu projeto <span class="arrow-icon">→</span></button>
       </div>
     </section>
   </main>
