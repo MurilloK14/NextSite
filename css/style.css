@@ -834,8 +834,8 @@ section[id],
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 0.9rem 1.6rem;
+  gap: 10px;
+  padding: 1.25rem 2rem;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
@@ -845,7 +845,7 @@ section[id],
 }
 .services-tech-img {
   width: 100%;
-  max-width: 240px;
+  max-width: 400px; /* Logos grandes, nítidas e com forte presença visual */
   height: auto;
   display: block;
   filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.6));
@@ -856,7 +856,7 @@ section[id],
 }
 .tech-badge-caption {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--text-dim);
   letter-spacing: 0.02em;
 }
@@ -865,44 +865,13 @@ section[id],
     padding-top: calc(70px + 1.5rem);
   }
   .services-tech-img {
-    max-width: 190px;
+    max-width: 280px;
   }
   .tech-badge-container {
-    padding: 0.75rem 1.2rem;
+    padding: 0.9rem 1.25rem;
   }
   .tech-badge-caption {
-    font-size: 0.72rem;
-  }
-}
-
-/* Height-based responsive rules for laptops and small viewports */
-@media (max-height: 820px) {
-  .premium-services {
-    padding-top: calc(78px + 1rem);
-    padding-bottom: var(--sp-8);
-  }
-  .services-header {
-    margin-bottom: 1.5rem;
-  }
-  .services-header .h1 {
-    font-size: clamp(1.6rem, 2.6vw, 2.15rem);
-    margin-bottom: 0.4rem;
-  }
-  .services-subtitle {
-    font-size: 0.92rem;
-  }
-  .services-tech-wrapper {
-    margin-top: 0.85rem;
-  }
-  .tech-badge-container {
-    padding: 0.65rem 1.2rem;
-    gap: 6px;
-  }
-  .services-tech-img {
-    max-width: 200px;
-  }
-  .tech-badge-caption {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
   }
 }
 
