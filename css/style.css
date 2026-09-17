@@ -278,6 +278,17 @@ p { color: var(--text-muted); }
   z-index: 1;
 }
 
+/* Global Anchor Clearance for Fixed Header */
+section[id],
+.section[id],
+#servicos,
+#portfolio,
+#beneficios,
+#planos,
+#orcamento {
+  scroll-margin-top: calc(78px + 1.5rem);
+}
+
 /* =====================================================
    BUTTONS
    ===================================================== */
@@ -785,32 +796,36 @@ p { color: var(--text-muted); }
 .premium-services {
   background: transparent;
   color: #FFF;
-  padding: var(--sp-24) 0;
+  padding: calc(78px + 2rem) 0 var(--sp-12);
   position: relative;
   z-index: 2;
+  scroll-margin-top: calc(78px + 1.5rem);
 }
 .services-header {
   text-align: center;
-  margin-bottom: var(--sp-20);
+  margin-bottom: var(--sp-10);
   max-width: 840px;
   margin-left: auto;
   margin-right: auto;
 }
 .services-header .h1 {
   color: #FFF;
-  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
   letter-spacing: -0.035em;
-  margin-bottom: var(--sp-4);
-  line-height: 1.15;
+  margin-bottom: 0.65rem;
+  line-height: 1.18;
 }
 .services-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
   color: var(--text-muted);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.5;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .services-tech-wrapper {
-  margin-top: var(--sp-8);
+  margin-top: 1.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -819,8 +834,8 @@ p { color: var(--text-muted); }
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  padding: 1.5rem 2.2rem;
+  gap: 8px;
+  padding: 0.9rem 1.6rem;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
@@ -830,7 +845,7 @@ p { color: var(--text-muted); }
 }
 .services-tech-img {
   width: 100%;
-  max-width: 420px;
+  max-width: 240px;
   height: auto;
   display: block;
   filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.6));
@@ -841,13 +856,53 @@ p { color: var(--text-muted); }
 }
 .tech-badge-caption {
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--text-dim);
   letter-spacing: 0.02em;
 }
 @media (max-width: 768px) {
+  .premium-services {
+    padding-top: calc(70px + 1.5rem);
+  }
   .services-tech-img {
-    max-width: 260px;
+    max-width: 190px;
+  }
+  .tech-badge-container {
+    padding: 0.75rem 1.2rem;
+  }
+  .tech-badge-caption {
+    font-size: 0.72rem;
+  }
+}
+
+/* Height-based responsive rules for laptops and small viewports */
+@media (max-height: 820px) {
+  .premium-services {
+    padding-top: calc(78px + 1rem);
+    padding-bottom: var(--sp-8);
+  }
+  .services-header {
+    margin-bottom: 1.5rem;
+  }
+  .services-header .h1 {
+    font-size: clamp(1.6rem, 2.6vw, 2.15rem);
+    margin-bottom: 0.4rem;
+  }
+  .services-subtitle {
+    font-size: 0.92rem;
+  }
+  .services-tech-wrapper {
+    margin-top: 0.85rem;
+  }
+  .tech-badge-container {
+    padding: 0.65rem 1.2rem;
+    gap: 6px;
+  }
+  .services-tech-img {
+    max-width: 200px;
+  }
+  .tech-badge-caption {
+    font-size: 0.72rem;
   }
 }
 
@@ -855,7 +910,7 @@ p { color: var(--text-muted); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-6);
-  margin-top: var(--sp-12);
+  margin-top: 0;
 }
 .service-item {
   padding: 2.2rem 2rem;
