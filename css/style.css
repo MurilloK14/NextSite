@@ -27,7 +27,7 @@
   --accent-gradient: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
   --accent-light: #DDD6FE;
   --accent-glow: rgba(124, 58, 237, 0.3);
-  --cyber-cyan: #38BDF8;
+  --cyber-cyan: #00E5FF;
   --color-emerald: #10B981;
   --color-whatsapp: #25D366;
 
@@ -572,6 +572,10 @@ p { color: var(--text-muted); }
   color: #FFF;
   text-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
 }
+.text-accent {
+  color: var(--cyber-cyan);
+  text-shadow: 0 0 32px rgba(0, 229, 255, 0.45);
+}
 
 /* Loading Indicator */
 .seq-loading {
@@ -765,15 +769,15 @@ p { color: var(--text-muted); }
   height: 100vh;
   height: 100dvh;
   object-fit: cover;
-  opacity: 0.14; /* Reduced to provide subtle atmosphere without visual clutter */
-  filter: contrast(1.1) brightness(0.7);
+  opacity: 0.52; /* Código binário bem nítido e iluminado */
+  filter: contrast(1.25) brightness(1.25);
 }
 
 .dark-video-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 30%, rgba(124, 58, 237, 0.08) 0%, transparent 70%),
-              linear-gradient(to bottom, var(--bg-canvas) 0%, rgba(8, 7, 17, 0.75) 15%, rgba(8, 7, 17, 0.85) 85%, var(--bg-obsidian) 100%);
+  background: radial-gradient(circle at 50% 30%, rgba(124, 58, 237, 0.12) 0%, transparent 65%),
+              linear-gradient(to bottom, var(--bg-canvas) 0%, rgba(8, 7, 20, 0.32) 15%, rgba(12, 10, 24, 0.35) 85%, var(--bg-obsidian) 100%);
   pointer-events: none;
 }
 

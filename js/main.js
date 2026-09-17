@@ -351,30 +351,62 @@ function initCalculator() {
 
   if (!form || !resultValue || !btnCalc) return;
 
+  const typeConfig = {
+    landing_page: {
+      name: 'Landing Page (Página Única Comercial)',
+      base: 350
+    },
+    institucional: {
+      name: 'Site Institucional / Corporativo Múltiplo',
+      base: 900
+    },
+    ecommerce: {
+      name: 'E-commerce / Sistema Web Sob Medida',
+      base: 1500
+    }
+  };
+
+  const addonConfig = {
+    blog: { name: 'Área de Publicações / Blog', price: 200 },
+    multilingue: { name: 'Arquitetura Multi-idioma', price: 300 },
+    agendamento: { name: 'Sistema de Agendamento Nativo', price: 250 }
+  };
+
   const calculate = () => {
     const data = new FormData(form);
-    let total = 0;
-    const type = data.get('project_type');
+    const typeKey = data.get('project_type') || 'landing_page';
+    const typeInfo = typeConfig[typeKey] || typeConfig.landing_page;
+    let total = typeInfo.base;
 
-    if (type === 'landing_page') total += 350;
-    else if (type === 'institucional') total += 900;
-    else if (type === 'ecommerce') total += 1500;
+    const selectedAddons = data.getAll('addon');
+    const addonNames = [];
 
-    const addons = data.getAll('addon');
-    if (addons.includes('blog')) total += 200;
-    if (addons.includes('multilingue')) total += 300;
-    if (addons.includes('agendamento')) total += 250;
+    selectedAddons.forEach(addonKey => {
+      if (addonConfig[addonKey]) {
+        total += addonConfig[addonKey].price;
+        addonNames.push(`${addonConfig[addonKey].name} (+R$ ${addonConfig[addonKey].price})`);
+      }
+    });
 
-    resultValue.textContent = `R$ ${total}`;
+    resultValue.textContent = `R$ ${total.toLocaleString('pt-BR')}`;
     resultValue.classList.remove('val-pop');
     void resultValue.offsetWidth; // trigger reflow for smooth animation
     resultValue.classList.add('val-pop');
 
-    const typeLabel = { 'landing_page': 'Landing Page', 'institucional': 'Site Institucional', 'ecommerce': 'E-commerce' }[type] || 'Site';
-    btnCalc.dataset.message = `Olá! Gostaria de solicitar um orçamento para um(a) ${typeLabel}. A estimativa apresentada foi de R$ ${total}.`;
+    // Mensagem contextual pré-definida para o WhatsApp
+    let msg = `Olá, NextSite! Fiz uma simulação no site e escolhi a seguinte configuração:\n\n`;
+    msg += `🚀 *Tipo de Site:* ${typeInfo.name}\n`;
+    if (addonNames.length > 0) {
+      msg += `🧩 *Módulos Extras:* ${addonNames.join(', ')}\n`;
+    }
+    msg += `💰 *Investimento Estimado:* R$ ${total.toLocaleString('pt-BR')}\n\n`;
+    msg += `Gostaria de entender melhor os prazos de entrega e como podemos iniciar o projeto!`;
+
+    btnCalc.dataset.message = msg;
   };
 
   form.addEventListener('change', calculate);
+  form.addEventListener('input', calculate);
   calculate();
 }
 
