@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initWhatsAppButtons();
   initScrollSequence();
   initHeaderObserver();
+  initBgVideo();
+  initScrollReveal();
 });
 
 function initScrollSequence() {
@@ -43,10 +45,47 @@ function initScrollSequence() {
   // --- Canvas sizing ---
   function computeRect() {
     if (!imgW || !imgH) return;
-    const s = Math.max(canvasW / imgW, canvasH / imgH);
-    drawW = imgW * s; drawH = imgH * s;
-    drawX = (canvasW - drawW) / 2;
-    drawY = (canvasH - drawH) / 2;
+    const isMobile = canvasW <= 768;
+    if (isMobile) {
+      // Scale notebook so it is prominent, crisp and close (~88% of mobile width)
+      // without being clipped horizontally during rotation
+      const s = (canvasW / imgW) * 1.62;
+      drawW = imgW * s;
+      drawH = imgH * s;
+      drawX = (canvasW - drawW) / 2;
+      drawY = (canvasH - drawH) / 2;
+    } else {
+      const s = Math.max(canvasW / imgW, canvasH / imgH);
+      drawW = imgW * s;
+      drawH = imgH * s;
+      drawX = (canvasW - drawW) / 2;
+      drawY = (canvasH - drawH) / 2;
+    }
+  }
+
+  function drawSequenceFrame(img) {
+    if (!img) return;
+    if (canvasW <= 768) {
+      ctx.fillStyle = '#080714';
+      ctx.fillRect(0, 0, canvasW, canvasH);
+    }
+    ctx.drawImage(img, drawX, drawY, drawW, drawH);
+    if (canvasW <= 768 && drawH < canvasH) {
+      const featherH = Math.min(48, drawH * 0.15);
+      // Top soft blend
+      const topGrad = ctx.createLinearGradient(0, drawY - 1, 0, drawY + featherH);
+      topGrad.addColorStop(0, '#080714');
+      topGrad.addColorStop(1, 'rgba(8, 7, 20, 0)');
+      ctx.fillStyle = topGrad;
+      ctx.fillRect(0, drawY - 1, canvasW, featherH + 1);
+
+      // Bottom soft blend
+      const botGrad = ctx.createLinearGradient(0, drawY + drawH - featherH, 0, drawY + drawH + 1);
+      botGrad.addColorStop(0, 'rgba(8, 7, 20, 0)');
+      botGrad.addColorStop(1, '#080714');
+      ctx.fillStyle = botGrad;
+      ctx.fillRect(0, drawY + drawH - featherH, canvasW, featherH + 1);
+    }
   }
 
   function resizeCanvas() {
@@ -86,7 +125,9 @@ function initScrollSequence() {
       imgH = bmp.height || bmp.naturalHeight || 0;
       resizeCanvas();
       // draw frame 0 immediately
-      if (imgW && imgH) ctx.drawImage(bmp, drawX, drawY, drawW, drawH);
+      if (imgW && imgH) {
+        drawSequenceFrame(bmp);
+      }
       lastFrameIdx = 0;
     }
 
@@ -152,7 +193,7 @@ function initScrollSequence() {
       let fi = wantFrame;
       while (fi >= 0 && !images[fi]) fi--;
       if (fi >= 0 && images[fi]) {
-        ctx.drawImage(images[fi], drawX, drawY, drawW, drawH);
+        drawSequenceFrame(images[fi]);
         lastFrameIdx = wantFrame; // mark as rendered even if fallback, prevents flicker
       }
     }
@@ -180,15 +221,35 @@ function initScrollSequence() {
     }
 
     // -- Satellite glass cards (appear while notebook is opening, disappear at very end) --
+    const isMobile = window.innerWidth <= 768;
+
     cards.forEach((card, i) => {
-      const stagger = i * 0.05;
-      const cardIn  = between(p, 0.40 + stagger, 0.55 + stagger);
-      const cardOut = between(p, 0.92, 0.98);
-      const a       = clamp(cardIn - cardOut, 0, 1);
-      card.style.opacity       = a;
-      card.style.pointerEvents = a > 0.05 ? 'auto' : 'none';
-      const dir = card.classList.contains('card-left') ? -1 : 1;
-      card.style.transform = `translateX(${dir * (1 - easeOut(cardIn)) * 24}px)`;
+      if (isMobile) {
+        // Mobile: sequential clean cycle (one card at a time in the bottom thumb zone)
+        const start = 0.28 + i * 0.22;
+        const peakIn = start + 0.06;
+        const peakOut = start + 0.16;
+        const end = start + 0.22;
+
+        const fadeIn = between(p, start, peakIn);
+        const fadeOut = between(p, peakOut, end);
+        const a = clamp(fadeIn - fadeOut, 0, 1);
+        const ty = (1 - easeOut(fadeIn)) * 14 - (fadeOut * 14);
+
+        card.style.opacity = a;
+        card.style.pointerEvents = a > 0.1 ? 'auto' : 'none';
+        card.style.transform = `translate(-50%, ${ty}px)`;
+      } else {
+        // Desktop: floating cards positioned around notebook
+        const stagger = i * 0.02;
+        const cardIn  = between(p, 0.40 + stagger, 0.55 + stagger);
+        const cardOut = between(p, 0.92, 0.98);
+        const a       = clamp(cardIn - cardOut, 0, 1);
+        card.style.opacity       = a;
+        card.style.pointerEvents = a > 0.05 ? 'auto' : 'none';
+        const dir = card.classList.contains('card-left') ? -1 : 1;
+        card.style.transform = `translateX(${dir * (1 - easeOut(cardIn)) * 24}px)`;
+      }
     });
   }
 
@@ -306,9 +367,9 @@ function initCalculator() {
     let total = 0;
     const type = data.get('project_type');
 
-    if (type === 'landing_page') total += 497;
-    else if (type === 'institucional') total += 997;
-    else if (type === 'ecommerce') total += 1497;
+    if (type === 'landing_page') total += 350;
+    else if (type === 'institucional') total += 900;
+    else if (type === 'ecommerce') total += 1500;
 
     const addons = data.getAll('addon');
     if (addons.includes('blog')) total += 200;
@@ -325,9 +386,9 @@ function initCalculator() {
 }
 
 function initWhatsAppButtons() {
-  const WHATSAPP_NUMBER = '5500000000000';
+  const WHATSAPP_NUMBER = '5587981329735';
   if (WHATSAPP_NUMBER === '5500000000000') {
-    console.warn("⚠️ [QUERO MEU SITE] O número de WhatsApp configurado é um placeholder ('5500000000000'). Os CTAs não funcionarão corretamente. Substitua-o no arquivo main.js.");
+    console.warn("⚠️ [NextSite] O número de WhatsApp configurado é um placeholder ('5500000000000'). Os CTAs não funcionarão corretamente. Substitua-o no arquivo main.js.");
   }
   const buttons = document.querySelectorAll('.btn-whatsapp');
   buttons.forEach(btn => {
@@ -341,3 +402,45 @@ function initWhatsAppButtons() {
 }
 
 document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+/* =====================================================
+   SCROLL REVEAL OBSERVER
+   ===================================================== */
+function initScrollReveal() {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { rootMargin: '0px 0px -100px 0px' });
+  
+  reveals.forEach(el => observer.observe(el));
+}
+
+/* =====================================================
+   BACKGROUND VIDEO INITIALIZER
+   ===================================================== */
+function initBgVideo() {
+  const v = document.querySelector('.dark-video-bg');
+  if (v) {
+    v.muted = true;
+    const playPromise = v.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Retry on user interaction if browser strictly blocks autoplay
+        const onFirstTouch = () => {
+          v.play().catch(() => {});
+          window.removeEventListener('touchstart', onFirstTouch);
+          window.removeEventListener('scroll', onFirstTouch);
+          window.removeEventListener('click', onFirstTouch);
+        };
+        window.addEventListener('touchstart', onFirstTouch, { passive: true });
+        window.addEventListener('scroll', onFirstTouch, { passive: true });
+        window.addEventListener('click', onFirstTouch, { passive: true });
+      });
+    }
+  }
+}
+

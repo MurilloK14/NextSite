@@ -23,7 +23,7 @@
 
   <header class="site-header">
     <div class="container nav-inner">
-      <a href="#" class="logo">Quero Meu<span>Site</span></a>
+      <a href="#" class="logo">Next<span>Site</span></a>
       <ul class="nav-links">
         <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
         <li><a href="#beneficios" class="nav-link">Nossa Entrega</a></li>
@@ -120,66 +120,95 @@
     </section>
 
     <!-- ====================================================
-         SERVICES (Premium Transition)
+         DARK SHOWCASE ZONE (Services & Portfolio with Video Background)
          ==================================================== -->
-    <section id="servicos" class="section premium-services theme-dark">
-      <div class="container">
-        <div class="services-header">
-          <h2 class="h1">Seu site. <span class="text-accent">Do seu jeito.</span></h2>
-          <p class="services-subtitle">Cada negócio tem uma história. Seu site também deve ter.</p>
-        </div>
-        
-        <div class="services-grid">
-          <div class="service-item reveal">
-            <h3>SITES PERSONALIZADOS</h3>
-            <p>Design exclusivo para a identidade do seu negócio.</p>
-          </div>
-          <div class="service-item reveal" style="transition-delay: 100ms;">
-            <h3>LANDING PAGES</h3>
-            <p>Páginas focadas em apresentar sua empresa e gerar resultados.</p>
-          </div>
-          <div class="service-item reveal" style="transition-delay: 200ms;">
-            <h3>SOLUÇÕES WEB</h3>
-            <p>Sistemas e experiências digitais desenvolvidos para as necessidades do seu negócio.</p>
-          </div>
-        </div>
+    <div class="dark-showcase-zone">
+      <div class="dark-video-bg-container" aria-hidden="true">
+        <video class="dark-video-bg" autoplay loop muted playsinline preload="auto">
+          <source src="videos e fotos/codigo binario.mp4" type="video/mp4">
+        </video>
+        <div class="dark-video-overlay"></div>
       </div>
-    </section>
 
-    <!-- PORTFOLIO / DEMONSTRAÇÕES -->
-    <section id="portfolio" class="section portfolio portfolio-dark theme-dark">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="label">Demonstrações</span>
-            <h2 class="h1">Qualidade por design.</h2>
+      <!-- ====================================================
+           SERVICES (Premium Transition)
+           ==================================================== -->
+      <section id="servicos" class="section premium-services theme-dark">
+        <div class="container">
+          <div class="services-header">
+            <h2 class="h1">Seu site. <span class="text-accent">Do seu jeito.</span></h2>
+            <p class="services-subtitle">Cada negócio tem uma história. Seu site também deve ter.</p>
+            <div class="services-tech-wrapper">
+              <img src="videos e fotos/linguagens.png" alt="Linguagens e Tecnologias" class="services-tech-img">
+            </div>
           </div>
-          <button class="btn btn-primary btn-whatsapp" data-message="Gostei do portfólio! Quero algo nesse nível.">Iniciar projeto</button>
+          
+          <div class="services-grid">
+            <div class="service-item reveal">
+              <h3>SITES PERSONALIZADOS</h3>
+              <p>Design exclusivo para a identidade do seu negócio.</p>
+            </div>
+            <div class="service-item reveal" style="transition-delay: 100ms;">
+              <h3>LANDING PAGES</h3>
+              <p>Páginas focadas em apresentar sua empresa e gerar resultados.</p>
+            </div>
+            <div class="service-item reveal" style="transition-delay: 200ms;">
+              <h3>SOLUÇÕES WEB</h3>
+              <p>Sistemas e experiências digitais desenvolvidos para as necessidades do seu negócio.</p>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="portfolio-grid-demo">
-          <article class="portfolio-demo-card reveal">
-            <div class="portfolio-demo-img">
-              <img src="videos e fotos/Captura de tela 2026-09-11 114311.png" alt="Mockup BarberPro">
+      <!-- PORTFOLIO / DEMONSTRAÇÕES -->
+      <section id="portfolio" class="section portfolio portfolio-dark theme-dark">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="label">Demonstrações</span>
+              <h2 class="h1">Qualidade por design.</h2>
             </div>
-            <div class="portfolio-demo-info">
-              <h3>BarberPro</h3>
-              <span>Landing Page &amp; Agendamento</span>
-            </div>
-          </article>
+            <button class="btn btn-primary btn-whatsapp" data-message="Gostei do portfólio! Quero algo nesse nível.">Iniciar projeto</button>
+          </div>
 
-          <article class="portfolio-demo-card reveal" style="transition-delay: 0.15s">
-            <div class="portfolio-demo-img">
-              <img src="videos e fotos/Captura de tela 2026-09-11 164315.png" alt="Mockup Clínica Vita">
-            </div>
-            <div class="portfolio-demo-info">
-              <h3>Clínica Vita</h3>
-              <span>Site Institucional Médico</span>
-            </div>
-          </article>
+          <div class="portfolio-vertical-list">
+            <article class="portfolio-card-large reveal">
+              <div class="portfolio-browser-bar">
+                <div class="browser-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="browser-url">trimly.com.br/agendamento</div>
+              </div>
+              <div class="portfolio-img-wrapper">
+                <img src="videos e fotos/Captura de tela 2026-09-13 140603.png" alt="Demonstração Site de Barbearia - Trimly">
+              </div>
+              <div class="portfolio-demo-info">
+                <div class="portfolio-tag">Barbearia &amp; Agendamento</div>
+                <h3>Trimly / BarberPro</h3>
+                <p>Landing page de alta conversão para barbearias com agendamento online e painel de gestão simplificado.</p>
+              </div>
+            </article>
+
+            <article class="portfolio-card-large reveal" style="transition-delay: 0.15s">
+              <div class="portfolio-browser-bar">
+                <div class="browser-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="browser-url">lavanderiaexpress.com.br</div>
+              </div>
+              <div class="portfolio-img-wrapper">
+                <img src="videos e fotos/Captura de tela 2026-09-16 092313.png" alt="Demonstração Site de Lavanderia Express">
+              </div>
+              <div class="portfolio-demo-info">
+                <div class="portfolio-tag">Serviços &amp; Coleta</div>
+                <h3>Lavanderia Express</h3>
+                <p>Site institucional completo com apresentação de serviços, tabela interativa e agendamento de coleta rápida.</p>
+              </div>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!-- Dark-to-light visual bridge -->
     <div class="section-transition theme-light" aria-hidden="true"></div>
@@ -189,7 +218,7 @@
       <div class="container">
         <div class="section-header center">
           <span class="label">Nossa Entrega</span>
-          <h2 class="h1">Por que escolher a Quero Meu Site.</h2>
+          <h2 class="h1">Por que escolher a NextSite.</h2>
         </div>
 
         <div class="benefits-grid">
@@ -234,7 +263,7 @@
             <h3 class="plan-name">Landing Page</h3>
             <p class="plan-desc">Presença direta de página única para produtos ou campanhas de alta conversão.</p>
             <div class="plan-price-block">
-              <div class="plan-price"><span class="plan-currency">R$</span>497</div>
+              <div class="plan-price"><span class="plan-currency">R$</span>350</div>
             </div>
             <ul class="plan-features">
               <li>Página única focada em conversão</li>
@@ -242,7 +271,7 @@
               <li>Responsivo perfeito (Mobile first)</li>
               <li>Integração rápida via WhatsApp</li>
             </ul>
-            <button class="btn btn-primary btn-whatsapp" data-message="Olá, tenho interesse no pacote Landing Page (R$497).">Selecionar plano</button>
+            <button class="btn btn-primary btn-whatsapp" data-message="Olá, tenho interesse no pacote Landing Page (R$350).">Selecionar plano</button>
           </div>
 
           <!-- Plan 2 -->
@@ -251,7 +280,7 @@
             <h3 class="plan-name">Institucional</h3>
             <p class="plan-desc">Infraestrutura completa para empresas que buscam autoridade consolidada.</p>
             <div class="plan-price-block">
-              <div class="plan-price"><span class="plan-currency">R$</span>997</div>
+              <div class="plan-price"><span class="plan-currency">R$</span>900</div>
             </div>
             <ul class="plan-features">
               <li>Múltiplas páginas estruturadas</li>
@@ -259,7 +288,7 @@
               <li>Blog institucional incluso</li>
               <li>Painel administrativo de conteúdo</li>
             </ul>
-            <button class="btn btn-accent btn-whatsapp" data-message="Olá, tenho interesse no pacote Institucional (R$997).">Selecionar plano</button>
+            <button class="btn btn-accent btn-whatsapp" data-message="Olá, tenho interesse no pacote Institucional (R$900).">Selecionar plano</button>
           </div>
 
           <!-- Plan 3 -->
@@ -267,7 +296,7 @@
             <h3 class="plan-name">Plataforma</h3>
             <p class="plan-desc">Soluções complexas como e-commerces e sistemas administrativos locais.</p>
             <div class="plan-price-block">
-              <div class="plan-price"><span class="plan-currency">R$</span>1.497</div>
+              <div class="plan-price"><span class="plan-currency">R$</span>1.500</div>
             </div>
             <ul class="plan-features">
               <li>Estrutura ilimitada de páginas</li>
@@ -324,7 +353,7 @@
           <div class="calc-result-pane">
             <div class="result-box">
               <span class="result-kicker">Estimativa Base</span>
-              <div id="calc-result-value" class="result-value">R$ 497</div>
+              <div id="calc-result-value" class="result-value">R$ 350</div>
               <div class="result-note">O valor final será confirmado após o alinhamento técnico. Solicite a proposta formal sem compromisso.</div>
               <button id="calc-btn-cta" class="btn btn-accent btn-whatsapp">Avançar para WhatsApp <span class="arrow-icon">→</span></button>
             </div>
@@ -382,12 +411,12 @@
       </div>
     </section>
 
-    <!-- BOTTOM CTA (FINAL QUERO MEU SITE) -->
+    <!-- BOTTOM CTA (FINAL NEXTSITE) -->
     <section class="section bottom-cta final-cta-section theme-dark reveal">
       <div class="container center">
         <p class="final-desc">Você cuida do seu negócio.<br/>A gente cuida da sua presença digital.</p>
         <button class="btn btn-primary btn-cta btn-whatsapp" style="margin-bottom: 3rem;" data-message="Estou pronto para começar meu projeto.">Comece seu projeto <span class="arrow-icon">→</span></button>
-        <h2 class="display final-title">QUERO MEU SITE</h2>
+        <h2 class="display final-title">NEXTSITE</h2>
       </div>
     </section>
   </main>
@@ -396,7 +425,7 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="footer-logo">Quero Meu<span>Site</span></div>
+          <div class="footer-logo">Next<span>Site</span></div>
           <p>Agência digital especializada em execução de alta performance e design premium.</p>
         </div>
         <div class="footer-nav">
@@ -412,18 +441,23 @@
           <div class="footer-col">
             <h4>Contato</h4>
             <ul>
-              <li><a href="#" class="btn-whatsapp">WhatsApp Oficial</a></li>
-              <li><a href="mailto:contato@queromeusite.com.br">contato@queromeusite.com.br</a></li>
+              <li><a href="#" class="btn-whatsapp">(87) 98132-9735</a></li>
+              <li><a href="mailto:murillokennedy12@gmail.com">murillokennedy12@gmail.com</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="footer-year">2026</span> Quero Meu Site. Todos os direitos reservados.</p>
+        <p>&copy; <span id="footer-year">2026</span> NextSite. Todos os direitos reservados.</p>
         <p>Desenvolvido com excelência em São Paulo, BR.</p>
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp CTA (Mobile Only) -->
+  <a href="https://wa.me/5587981329735?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20um%20projeto%20para%20o%20meu%20neg%C3%B3cio." class="floating-whatsapp only-mobile btn-whatsapp" aria-label="Fale conosco no WhatsApp" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.574 1.83.843 2.806.843 3.178 0 5.767-2.587 5.768-5.766 0-3.181-2.589-5.768-5.768-5.768zm3.376 8.163c-.144.404-.837.774-1.17.824-.312.045-.694.072-2.148-.535-1.745-.731-2.883-2.518-2.97-2.634-.087-.116-.708-.941-.708-1.796 0-.855.449-1.277.609-1.451.16-.174.348-.218.464-.218.116 0 .232.001.334.007.107.006.249-.041.389.296.145.348.494 1.204.537 1.292.044.088.073.19.015.305-.058.116-.087.189-.174.291-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.973 1.211.669.596 1.233.78 1.408.867.174.087.276.073.378-.044.102-.116.435-.508.552-.682.116-.174.232-.145.392-.087.16.058 1.016.479 1.19.566.174.087.291.131.334.204.043.072.043.419-.101.823z"/></svg>
+  </a>
 
   <script src="js/main.js"></script>
   <script>
@@ -442,3 +476,5 @@
   </script>
 </body>
 </html>
+
+
