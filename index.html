@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080612">
-  <meta name="description" content="Quero Meu Site — Presença digital premium para negócios que exigem excelência.">
-  <title>Quero Meu Site — Presença Digital Premium</title>
+  <meta name="theme-color" content="#080711">
+  <meta name="description" content="NextSite — Presença digital de alto padrão e páginas de alta conversão para negócios que exigem excelência.">
+  <title>NextSite — Presença Digital de Alto Padrão</title>
+
+  <!-- Preconnect and Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 
-  <meta property="og:title" content="Quero Meu Site — Presença Digital Premium">
-  <meta property="og:description" content="Design premium, código limpo e foco absoluto em conversão.">
+  <meta property="og:title" content="NextSite — Presença Digital de Alto Padrão">
+  <meta property="og:description" content="Design autoral, engenharia visual moderna e foco cirúrgico em conversão.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://queromeusite.com.br/assets/og-image.jpg">
 </head>
 <body>
-  <div class="bg-abstract-shapes">
+  <div class="bg-abstract-shapes" aria-hidden="true">
     <div class="shape shape-1"></div>
     <div class="shape shape-2"></div>
     <div class="shape shape-3"></div>
@@ -23,17 +28,19 @@
 
   <header class="site-header">
     <div class="container nav-inner">
-      <a href="#" class="logo">Next<span>Site</span></a>
-      <ul class="nav-links">
-        <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
-        <li><a href="#beneficios" class="nav-link">Nossa Entrega</a></li>
-        <li><a href="#planos" class="nav-link">Planos</a></li>
-        <li><a href="#orcamento" class="nav-link">Simular</a></li>
-      </ul>
+      <a href="#" class="logo">Next<span class="logo-accent">Site</span></a>
+      <nav class="nav-container" aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+          <li><a href="#beneficios" class="nav-link">Nossa Entrega</a></li>
+          <li><a href="#planos" class="nav-link">Planos</a></li>
+          <li><a href="#orcamento" class="nav-link">Simular</a></li>
+        </ul>
+      </nav>
       <a href="#orcamento" class="btn btn-primary nav-cta">Quero meu site</a>
 
-      <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
-        <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor"><path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/></svg>
+      <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-nav">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </header>
@@ -44,9 +51,9 @@
       <li><a href="#portfolio" class="nav-link mobile-nav-link">Portfólio</a></li>
       <li><a href="#beneficios" class="nav-link mobile-nav-link">Nossa Entrega</a></li>
       <li><a href="#planos" class="nav-link mobile-nav-link">Planos</a></li>
-      <li><a href="#orcamento" class="nav-link mobile-nav-link">Simular</a></li>
+      <li><a href="#orcamento" class="nav-link mobile-nav-link">Simulador</a></li>
     </ul>
-    <a href="#orcamento" class="btn btn-accent btn-whatsapp" data-message="Olá! Gostaria de ter um site à altura do meu negócio." style="margin-top: auto; padding: 1.5rem;">Quero meu site</a>
+    <a href="#orcamento" class="btn btn-primary btn-whatsapp mobile-nav-cta" data-message="Olá! Gostaria de ter um site à altura do meu negócio.">Quero meu site <span class="arrow-icon">→</span></a>
   </div>
 
   <main>
@@ -73,8 +80,8 @@
             
             <!-- Intro Text (Visible when notebook is closed, top center) -->
             <div class="seq-group seq-intro-visible" id="seq-intro">
-              <span class="seq-pre-title">Seu negócio começa aqui</span>
-              <h1 class="seq-main-title">Transformamos ideias em <span class="text-accent">experiências digitais.</span></h1>
+              <span class="seq-pre-title">Presença Digital de Alto Padrão</span>
+              <h1 class="seq-main-title">Transformamos ideias em experiências digitais que geram valor.</h1>
               <a href="#orcamento" class="btn btn-primary seq-btn btn-whatsapp" style="margin-top: 1.5rem;" data-message="Olá! Quero transformar meu negócio digital.">Quero meu site <span class="arrow-icon">→</span></a>
             </div>
 
@@ -82,34 +89,52 @@
             <div id="seq-services">
               <!-- Card 1 — Left -->
               <div class="glass-card card-left seq-card" data-delay="0">
-                <div class="card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                <div class="card-badge">
+                  <span class="badge-dot dot-purple"></span>
+                  <span class="badge-label">Exclusividade &amp; Autoridade</span>
                 </div>
-                <div class="card-text">
-                  <h3>Sites Personalizados</h3>
-                  <p>Design exclusivo para a identidade do seu negócio.</p>
+                <h3 class="card-title">Sites Institucionais de Alto Padrão</h3>
+                <p class="card-desc">
+                  Design autoral com padrão internacional. Posicione sua marca como a escolha óbvia e líder absoluta do seu mercado.
+                </p>
+                <div class="card-tags">
+                  <span class="card-tag">UI/UX Exclusivo</span>
+                  <span class="card-tag">Zero Templates</span>
+                  <span class="card-tag">SEO Nativo</span>
                 </div>
               </div>
 
               <!-- Card 2 — Top Right -->
               <div class="glass-card card-top-right seq-card" data-delay="1">
-                <div class="card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                <div class="card-badge">
+                  <span class="badge-dot dot-cyan"></span>
+                  <span class="badge-label">Máquinas de Vendas</span>
                 </div>
-                <div class="card-text">
-                  <h3>Landing Pages</h3>
-                  <p>Páginas focadas em apresentar sua empresa e gerar resultados.</p>
+                <h3 class="card-title">Landing Pages de Alta Conversão</h3>
+                <p class="card-desc">
+                  Arquitetura persuasiva desenhada para transformar tráfego pago e visitantes casuais em clientes pagantes no WhatsApp.
+                </p>
+                <div class="card-tags">
+                  <span class="card-tag">Carregamento &lt; 0.8s</span>
+                  <span class="card-tag">Copy Estratégica</span>
+                  <span class="card-tag">Foco em ROI</span>
                 </div>
               </div>
 
               <!-- Card 3 — Bottom Right -->
               <div class="glass-card card-bottom-right seq-card" data-delay="2">
-                <div class="card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <div class="card-badge">
+                  <span class="badge-dot dot-emerald"></span>
+                  <span class="badge-label">Engenharia Digital</span>
                 </div>
-                <div class="card-text">
-                  <h3>Soluções Web</h3>
-                  <p>Sistemas e experiências digitais desenvolvidos sob medida.</p>
+                <h3 class="card-title">Sistemas &amp; Plataformas Web</h3>
+                <p class="card-desc">
+                  Painéis interativos, dashboards em tempo real e automações velozes sob medida para escalar sua operação com estabilidade.
+                </p>
+                <div class="card-tags">
+                  <span class="card-tag">Painéis Sob Medida</span>
+                  <span class="card-tag">Automações &amp; APIs</span>
+                  <span class="card-tag">99.9% Uptime</span>
                 </div>
               </div>
             </div>
@@ -136,25 +161,32 @@
       <section id="servicos" class="section premium-services theme-dark">
         <div class="container">
           <div class="services-header">
-            <h2 class="h1">Seu site. <span class="text-accent">Do seu jeito.</span></h2>
-            <p class="services-subtitle">Cada negócio tem uma história. Seu site também deve ter.</p>
+            <span class="section-kicker">Especialidades</span>
+            <h2 class="h1">Projetos autorais construídos com propósito.</h2>
+            <p class="services-subtitle">Engenharia visual, velocidade extrema e foco cirúrgico na experiência do cliente.</p>
             <div class="services-tech-wrapper">
-              <img src="videos e fotos/linguagens.png" alt="Linguagens e Tecnologias" class="services-tech-img">
+              <div class="tech-badge-container">
+                <img src="videos e fotos/linguagens.png" alt="Tecnologias Modernas Utilizadas" class="services-tech-img">
+                <span class="tech-badge-caption">Engenharia com código limpo, sem templates lentos e sem dependências pesadas</span>
+              </div>
             </div>
           </div>
           
           <div class="services-grid">
             <div class="service-item reveal">
-              <h3>SITES PERSONALIZADOS</h3>
-              <p>Design exclusivo para a identidade do seu negócio.</p>
+              <span class="service-num">01</span>
+              <h3>Sites Institucionais</h3>
+              <p>Design exclusivo e arquitetura refinada para transmitir autoridade imediata ao seu negócio.</p>
             </div>
             <div class="service-item reveal" style="transition-delay: 100ms;">
-              <h3>LANDING PAGES</h3>
-              <p>Páginas focadas em apresentar sua empresa e gerar resultados.</p>
+              <span class="service-num">02</span>
+              <h3>Landing Pages</h3>
+              <p>Páginas de tração comercial orientadas a tráfego pago e geração contínua de novos leads.</p>
             </div>
             <div class="service-item reveal" style="transition-delay: 200ms;">
-              <h3>SOLUÇÕES WEB</h3>
-              <p>Sistemas e experiências digitais desenvolvidos para as necessidades do seu negócio.</p>
+              <span class="service-num">03</span>
+              <h3>Soluções Web</h3>
+              <p>Catálogos dinâmicos, agendamentos e sistemas web desenhados para as necessidades da sua operação.</p>
             </div>
           </div>
         </div>
@@ -165,10 +197,10 @@
         <div class="container">
           <div class="section-header">
             <div>
-              <span class="label">Demonstrações</span>
-              <h2 class="h1">Qualidade por design.</h2>
+              <span class="section-kicker">Trabalhos Selecionados</span>
+              <h2 class="h1">Qualidade perceptível em cada pixel.</h2>
             </div>
-            <button class="btn btn-primary btn-whatsapp" data-message="Gostei do portfólio! Quero algo nesse nível.">Iniciar projeto</button>
+            <button class="btn btn-primary btn-whatsapp" data-message="Gostei do portfólio! Quero algo nesse nível.">Iniciar projeto <span class="arrow-icon">→</span></button>
           </div>
 
           <div class="portfolio-vertical-list">
@@ -177,15 +209,21 @@
                 <div class="browser-dots">
                   <span></span><span></span><span></span>
                 </div>
-                <div class="browser-url">trimly.com.br/agendamento</div>
+                <div class="browser-url">
+                  <svg class="lock-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  trimly.com.br/agendamento
+                </div>
               </div>
               <div class="portfolio-img-wrapper">
                 <img src="videos e fotos/Captura de tela 2026-09-13 140603.png" alt="Demonstração Site de Barbearia - Trimly">
               </div>
               <div class="portfolio-demo-info">
-                <div class="portfolio-tag">Barbearia &amp; Agendamento</div>
+                <div class="portfolio-meta">
+                  <span class="portfolio-tag">Barbearia &amp; Agendamento</span>
+                  <span class="portfolio-scope">Landing Page • Mobile First</span>
+                </div>
                 <h3>Trimly / BarberPro</h3>
-                <p>Landing page de alta conversão para barbearias com agendamento online e painel de gestão simplificado.</p>
+                <p>Página de alta conversão para barbearias premium com agendamento online e navegação fluida em dispositivos móveis.</p>
               </div>
             </article>
 
@@ -194,15 +232,21 @@
                 <div class="browser-dots">
                   <span></span><span></span><span></span>
                 </div>
-                <div class="browser-url">lavanderiaexpress.com.br</div>
+                <div class="browser-url">
+                  <svg class="lock-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  lavanderiaexpress.com.br
+                </div>
               </div>
               <div class="portfolio-img-wrapper">
                 <img src="videos e fotos/Captura de tela 2026-09-16 092313.png" alt="Demonstração Site de Lavanderia Express">
               </div>
               <div class="portfolio-demo-info">
-                <div class="portfolio-tag">Serviços &amp; Coleta</div>
+                <div class="portfolio-meta">
+                  <span class="portfolio-tag">Serviços &amp; Logística</span>
+                  <span class="portfolio-scope">Site Institucional Completo</span>
+                </div>
                 <h3>Lavanderia Express</h3>
-                <p>Site institucional completo com apresentação de serviços, tabela interativa e agendamento de coleta rápida.</p>
+                <p>Plataforma institucional moderna com catálogo interativo de serviços e botão direto para agendamento de coleta rápida.</p>
               </div>
             </article>
           </div>
@@ -210,15 +254,13 @@
       </section>
     </div>
 
-    <!-- Dark-to-light visual bridge -->
-    <div class="section-transition theme-light" aria-hidden="true"></div>
-
     <!-- PROVA / BENEFÍCIOS -->
-    <section id="beneficios" class="section benefits theme-light reveal">
+    <section id="beneficios" class="section benefits theme-dark reveal">
       <div class="container">
         <div class="section-header center">
-          <span class="label">Nossa Entrega</span>
+          <span class="section-kicker">Metodologia &amp; Rigor</span>
           <h2 class="h1">Por que escolher a NextSite.</h2>
+          <p class="section-lead">Combinamos precisão de engenharia com design intencional para colocar seu negócio à frente.</p>
         </div>
 
         <div class="benefits-grid">
@@ -226,8 +268,8 @@
             <div class="icon-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             </div>
-            <h3 class="h3">Design Direcionado</h3>
-            <p>Construímos interfaces únicas e intencionais. A hierarquia, a tipografia e o espaço negativo comunicam o seu valor com autoridade instantânea.</p>
+            <h3 class="h3">Design Intencional</h3>
+            <p>Construímos interfaces autorais e memoráveis. Cada escolha tipográfica e espaçamento comunica autoridade sólida desde o primeiro segundo.</p>
           </div>
 
           <div class="benefit-card">
@@ -235,7 +277,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
             <h3 class="h3">Foco em Conversão</h3>
-            <p>Reduzimos a fricção cognitiva. Cada elemento, botão e microinteração existe com o propósito singular de guiar o visitante até o contato.</p>
+            <p>Reduzimos a fricção cognitiva. Cada elemento, botão e microinteração existe com o propósito singular de guiar o visitante até o contato comercial.</p>
           </div>
 
           <div class="benefit-card">
@@ -243,119 +285,175 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             </div>
             <h3 class="h3">Performance Extrema</h3>
-            <p>Escrevemos código limpo, sem dependências excessivas, garantindo carregamento instantâneo e navegação fluida no celular.</p>
+            <p>Código limpo e sem bibliotecas inchadas, garantindo carregamento instantâneo em redes 4G/5G e pontuação máxima no Google.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- PRICING -->
-    <section id="planos" class="section pricing theme-light reveal">
+    <section id="planos" class="section pricing theme-dark reveal">
       <div class="container">
         <div class="section-header center">
-          <span class="label">Investimento</span>
-          <h2 class="h1">Projetos sob medida.</h2>
+          <span class="section-kicker">Investimento Transparente</span>
+          <h2 class="h1">Planos estruturados para o seu momento.</h2>
+          <p class="section-lead">Preço justo, escopo definido e entrega profissional sem taxas ocultas.</p>
         </div>
 
         <div class="pricing-grid">
           <!-- Plan 1 -->
           <div class="pricing-card">
-            <h3 class="plan-name">Landing Page</h3>
-            <p class="plan-desc">Presença direta de página única para produtos ou campanhas de alta conversão.</p>
+            <div class="plan-header">
+              <h3 class="plan-name">Landing Page</h3>
+              <p class="plan-desc">Presença direta de página única para produtos, serviços ou campanhas de alta conversão.</p>
+            </div>
             <div class="plan-price-block">
               <div class="plan-price"><span class="plan-currency">R$</span>350</div>
+              <span class="plan-period">pagamento único</span>
             </div>
             <ul class="plan-features">
-              <li>Página única focada em conversão</li>
-              <li>Design totalmente exclusivo</li>
-              <li>Responsivo perfeito (Mobile first)</li>
-              <li>Integração rápida via WhatsApp</li>
+              <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Página única focada em conversão</li>
+              <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Design exclusivo e 100% responsivo</li>
+              <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Integração rápida via WhatsApp</li>
+              <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Otimização de carregamento ágil</li>
             </ul>
-            <button class="btn btn-primary btn-whatsapp" data-message="Olá, tenho interesse no pacote Landing Page (R$350).">Selecionar plano</button>
+            <button class="btn btn-secondary btn-whatsapp" data-message="Olá, tenho interesse no pacote Landing Page (R$350).">Selecionar plano</button>
           </div>
 
-          <!-- Plan 2 -->
+          <!-- Plan 2 (Featured) -->
           <div class="pricing-card featured">
-            <div class="popular-badge">Mais escolhido</div>
-            <h3 class="plan-name">Institucional</h3>
-            <p class="plan-desc">Infraestrutura completa para empresas que buscam autoridade consolidada.</p>
+            <div class="popular-badge">Mais Escolhido</div>
+            <div class="plan-header">
+              <h3 class="plan-name">Institucional</h3>
+              <p class="plan-desc">Infraestrutura completa para empresas que buscam autoridade duradoura e confiança máxima.</p>
+            </div>
             <div class="plan-price-block">
               <div class="plan-price"><span class="plan-currency">R$</span>900</div>
+              <span class="plan-period">pagamento único</span>
             </div>
             <ul class="plan-features">
-              <li>Múltiplas páginas estruturadas</li>
-              <li>Otimização técnica para Buscadores (SEO)</li>
-              <li>Blog institucional incluso</li>
-              <li>Painel administrativo de conteúdo</li>
+              <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Múltiplas páginas estruturadas</li>
+              <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Otimização técnica para Buscadores (SEO)</li>
+              <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Seção institucional &amp; catálogo de serviços</li>
+              <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Módulo de publicações / blog incluso</li>
             </ul>
-            <button class="btn btn-accent btn-whatsapp" data-message="Olá, tenho interesse no pacote Institucional (R$900).">Selecionar plano</button>
+            <button class="btn btn-primary btn-whatsapp" data-message="Olá, tenho interesse no pacote Institucional (R$900).">Selecionar plano <span class="arrow-icon">→</span></button>
           </div>
 
           <!-- Plan 3 -->
           <div class="pricing-card">
-            <h3 class="plan-name">Plataforma</h3>
-            <p class="plan-desc">Soluções complexas como e-commerces e sistemas administrativos locais.</p>
+            <div class="plan-header">
+              <h3 class="plan-name">Plataforma</h3>
+              <p class="plan-desc">Soluções avançadas com catálogos, agendamentos nativos ou regras de negócio sob medida.</p>
+            </div>
             <div class="plan-price-block">
               <div class="plan-price"><span class="plan-currency">R$</span>1.500</div>
+              <span class="plan-period">a partir de</span>
             </div>
             <ul class="plan-features">
-              <li>Estrutura ilimitada de páginas</li>
-              <li>Catálogo de produtos / Agendamento</li>
-              <li>Dashboard analítico integrado</li>
-              <li>Desenvolvimento frontend avançado</li>
+              <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Arquitetura avançada de páginas</li>
+              <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Catálogo de produtos / Agendamento dinâmico</li>
+              <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Painéis e dashboards administrativos</li>
+              <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Engenharia frontend sob medida</li>
             </ul>
-            <button class="btn btn-primary btn-whatsapp" data-message="Olá, preciso de um projeto de Plataforma.">Consultar solução</button>
+            <button class="btn btn-secondary btn-whatsapp" data-message="Olá, preciso de um projeto de Plataforma.">Consultar solução</button>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CALCULATOR -->
-    <section id="orcamento" class="section calculator theme-light reveal">
+    <section id="orcamento" class="section calculator theme-dark reveal">
       <div class="container">
         <div class="section-header center">
-          <span class="label">Calculadora</span>
-          <h2 class="h2">Simule seu projeto.</h2>
-          <p>Descubra o investimento ideal para a sua necessidade de forma transparente.</p>
+          <span class="section-kicker">Simulador Interativo</span>
+          <h2 class="h2">Calcule o investimento do seu projeto.</h2>
+          <p class="section-lead">Transparência total: escolha o formato ideal e visualize a estimativa de forma clara.</p>
         </div>
 
         <div class="calc-wrapper">
           <form id="calc-form" class="calc-form">
             <div class="calc-group">
-              <span class="calc-label">Escopo principal</span>
+              <span class="calc-label">1. Escolha o escopo principal</span>
               <div class="calc-options">
                 <input type="radio" id="type_lp" name="project_type" value="landing_page" class="calc-radio" checked>
-                <label for="type_lp" class="calc-btn">Página Única Comercial</label>
+                <label for="type_lp" class="calc-btn">
+                  <span class="calc-custom-indicator"></span>
+                  <div class="calc-btn-content">
+                    <span class="calc-btn-title">Página Única Comercial (Landing Page)</span>
+                    <span class="calc-btn-sub">Foco total em campanhas de alta conversão</span>
+                  </div>
+                  <span class="calc-badge-price">R$ 350</span>
+                </label>
 
                 <input type="radio" id="type_inst" name="project_type" value="institucional" class="calc-radio">
-                <label for="type_inst" class="calc-btn">Site Corporativo Múltiplo</label>
+                <label for="type_inst" class="calc-btn">
+                  <span class="calc-custom-indicator"></span>
+                  <div class="calc-btn-content">
+                    <span class="calc-btn-title">Site Corporativo Múltiplo (Institucional)</span>
+                    <span class="calc-btn-sub">Múltiplas seções e autoridade de marca</span>
+                  </div>
+                  <span class="calc-badge-price">R$ 900</span>
+                </label>
 
                 <input type="radio" id="type_ecom" name="project_type" value="ecommerce" class="calc-radio">
-                <label for="type_ecom" class="calc-btn">E-commerce / Sistema</label>
+                <label for="type_ecom" class="calc-btn">
+                  <span class="calc-custom-indicator"></span>
+                  <div class="calc-btn-content">
+                    <span class="calc-btn-title">E-commerce / Sistema Web</span>
+                    <span class="calc-btn-sub">Plataforma dinâmica com regras personalizadas</span>
+                  </div>
+                  <span class="calc-badge-price">R$ 1.500</span>
+                </label>
               </div>
             </div>
 
             <div class="calc-group" style="margin-bottom:0;">
-              <span class="calc-label">Módulos extras</span>
+              <span class="calc-label">2. Adicione módulos complementares</span>
               <div class="calc-options">
                 <input type="checkbox" id="add_blog" name="addon" value="blog" class="calc-checkbox">
-                <label for="add_blog" class="calc-btn">Área de Publicações (+R$200)</label>
+                <label for="add_blog" class="calc-btn">
+                  <span class="calc-custom-indicator checkbox-indicator"></span>
+                  <div class="calc-btn-content">
+                    <span class="calc-btn-title">Área de Publicações / Artigos</span>
+                    <span class="calc-btn-sub">Módulo para ranqueamento orgânico</span>
+                  </div>
+                  <span class="calc-badge-price">+R$ 200</span>
+                </label>
 
                 <input type="checkbox" id="add_lang" name="addon" value="multilingue" class="calc-checkbox">
-                <label for="add_lang" class="calc-btn">Arquitetura Multi-idioma (+R$300)</label>
+                <label for="add_lang" class="calc-btn">
+                  <span class="calc-custom-indicator checkbox-indicator"></span>
+                  <div class="calc-btn-content">
+                    <span class="calc-btn-title">Arquitetura Multi-idioma</span>
+                    <span class="calc-btn-sub">Suporte completo a Português / Inglês</span>
+                  </div>
+                  <span class="calc-badge-price">+R$ 300</span>
+                </label>
 
                 <input type="checkbox" id="add_sched" name="addon" value="agendamento" class="calc-checkbox">
-                <label for="add_sched" class="calc-btn">Agendamento Nativo (+R$250)</label>
+                <label for="add_sched" class="calc-btn">
+                  <span class="calc-custom-indicator checkbox-indicator"></span>
+                  <div class="calc-btn-content">
+                    <span class="calc-btn-title">Agendamento &amp; Reserva Nativa</span>
+                    <span class="calc-btn-sub">Calendário integrado para horários e serviços</span>
+                  </div>
+                  <span class="calc-badge-price">+R$ 250</span>
+                </label>
               </div>
             </div>
           </form>
 
           <div class="calc-result-pane">
             <div class="result-box">
-              <span class="result-kicker">Estimativa Base</span>
+              <div class="result-status-pill">
+                <span class="status-indicator"></span>
+                <span>Estimativa instantânea</span>
+              </div>
+              <span class="result-kicker">Investimento Estimado</span>
               <div id="calc-result-value" class="result-value">R$ 350</div>
-              <div class="result-note">O valor final será confirmado após o alinhamento técnico. Solicite a proposta formal sem compromisso.</div>
-              <button id="calc-btn-cta" class="btn btn-accent btn-whatsapp">Avançar para WhatsApp <span class="arrow-icon">→</span></button>
+              <div class="result-note">Valor transparente confirmado em alinhamento prévio. Sem custos surpresa e sem taxas mensais obrigatórias.</div>
+              <button id="calc-btn-cta" class="btn btn-primary btn-calc-cta btn-whatsapp">Solicitar proposta no WhatsApp <span class="arrow-icon">→</span></button>
             </div>
           </div>
         </div>
@@ -363,47 +461,47 @@
     </section>
 
     <!-- FAQ -->
-    <section class="section faq theme-light reveal">
+    <section class="section faq theme-dark reveal">
       <div class="container faq-container">
         <div class="faq-header">
-          <span class="label">Dúvidas</span>
+          <span class="section-kicker">Transparência</span>
           <h2 class="h2">Perguntas Frequentes</h2>
-          <p>Tudo o que você precisa saber antes de iniciarmos seu projeto digital.</p>
+          <p class="section-lead">Tudo o que você precisa saber antes de iniciarmos o desenvolvimento do seu projeto.</p>
         </div>
 
         <div class="faq-list">
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-1">
-              Fornecem infraestrutura de hospedagem?
-              <span class="faq-icon"></span>
+              <span>Fornecem a infraestrutura de hospedagem e domínio?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div id="faq-ans-1" class="faq-answer">
               <div class="faq-answer-inner">
-                Orientamos a compra da infraestrutura e domínio no seu nome. Nossa filosofia garante que você seja dono absoluto dos seus assets digitais, sem taxas mensais abusivas nos prendendo a você.
+                Orientamos a compra da hospedagem e registro do domínio diretamente no seu nome. Nossa filosofia assegura que você seja o dono legítimo de todos os seus ativos digitais, sem nenhuma taxa mensal oculta nos prendendo a você.
               </div>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-2">
-              Preciso enviar textos e imagens?
-              <span class="faq-icon"></span>
+              <span>Preciso ter todos os textos e imagens prontos?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div id="faq-ans-2" class="faq-answer">
               <div class="faq-answer-inner">
-                Auxiliamos na organização de copywriting e curadoria de imagens premium, mas a matéria-prima autêntica precisa vir de você para máxima eficácia.
+                Auxiliamos ativamente na organização de copywriting e na curadoria visual do projeto. Você não precisa se preocupar em escrever tudo sozinho — basta nos passar os detalhes centrais do seu negócio durante a nossa conversa inicial.
               </div>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-3">
-              Qual é a estrutura de pagamento?
-              <span class="faq-icon"></span>
+              <span>Qual é o formato e etapas de pagamento?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div id="faq-ans-3" class="faq-answer">
               <div class="faq-answer-inner">
-                Trabalhamos com adiantamento de 50% para reserva de agenda e kick-off do projeto, e os 50% restantes são faturados na aprovação e deploy da versão final.
+                Trabalhamos com 50% de entrada para reserva de agenda e início imediato do desenvolvimento, e os 50% restantes somente após a sua aprovação final e publicação online do site.
               </div>
             </div>
           </div>
@@ -411,22 +509,26 @@
       </div>
     </section>
 
-    <!-- BOTTOM CTA (FINAL NEXTSITE) -->
+    <!-- BOTTOM CTA -->
     <section class="section bottom-cta final-cta-section theme-dark reveal">
       <div class="container center">
-        <p class="final-desc">Você cuida do seu negócio.<br/>A gente cuida da sua presença digital.</p>
-        <button class="btn btn-primary btn-cta btn-whatsapp" style="margin-bottom: 3rem;" data-message="Estou pronto para começar meu projeto.">Comece seu projeto <span class="arrow-icon">→</span></button>
-        <h2 class="display final-title">NEXTSITE</h2>
+        <div class="status-pill mb-4">
+          <span class="status-indicator"></span>
+          <span>Disponível para novos projetos neste trimestre</span>
+        </div>
+        <h2 class="final-heading">Você cuida do seu negócio.<br>A gente cuida da sua presença digital.</h2>
+        <p class="final-desc">Construa autoridade sólida e transforme visitantes em clientes reais a partir de hoje.</p>
+        <button class="btn btn-primary btn-cta btn-whatsapp" style="margin-bottom: 2rem;" data-message="Estou pronto para começar meu projeto.">Comece seu projeto agora <span class="arrow-icon">→</span></button>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer theme-light">
+  <footer class="site-footer theme-dark">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="footer-logo">Next<span>Site</span></div>
-          <p>Agência digital especializada em execução de alta performance e design premium.</p>
+          <div class="footer-logo">Next<span class="logo-accent">Site</span></div>
+          <p>Estúdio digital especializado em páginas de alta conversão, engenharia frontend moderna e presença online de prestígio para pequenos negócios e profissionais liberais.</p>
         </div>
         <div class="footer-nav">
           <div class="footer-col">
@@ -439,9 +541,9 @@
             </ul>
           </div>
           <div class="footer-col">
-            <h4>Contato</h4>
+            <h4>Contato Direto</h4>
             <ul>
-              <li><a href="#" class="btn-whatsapp">(87) 98132-9735</a></li>
+              <li><a href="#" class="btn-whatsapp footer-whatsapp-link"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display:inline-block; vertical-align:middle; margin-right:6px;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.574 1.83.843 2.806.843 3.178 0 5.767-2.587 5.768-5.766 0-3.181-2.589-5.768-5.768-5.768zm3.376 8.163c-.144.404-.837.774-1.17.824-.312.045-.694.072-2.148-.535-1.745-.731-2.883-2.518-2.97-2.634-.087-.116-.708-.941-.708-1.796 0-.855.449-1.277.609-1.451.16-.174.348-.218.464-.218.116 0 .232.001.334.007.107.006.249-.041.389.296.145.348.494 1.204.537 1.292.044.088.073.19.015.305-.058.116-.087.189-.174.291-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.973 1.211.669.596 1.233.78 1.408.867.174.087.276.073.378-.044.102-.116.435-.508.552-.682.116-.174.232-.145.392-.087.16.058 1.016.479 1.19.566.174.087.291.131.334.204.043.072.043.419-.101.823z"/></svg>(87) 98132-9735</a></li>
               <li><a href="mailto:murillokennedy12@gmail.com">murillokennedy12@gmail.com</a></li>
             </ul>
           </div>
@@ -449,31 +551,17 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; <span id="footer-year">2026</span> NextSite. Todos os direitos reservados.</p>
-        <p>Desenvolvido com excelência em São Paulo, BR.</p>
+        <p class="footer-dev-credit">Engenharia visual com código puro &amp; alta performance.</p>
       </div>
     </div>
   </footer>
 
   <!-- Floating WhatsApp CTA (Mobile Only) -->
   <a href="https://wa.me/5587981329735?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20um%20projeto%20para%20o%20meu%20neg%C3%B3cio." class="floating-whatsapp only-mobile btn-whatsapp" aria-label="Fale conosco no WhatsApp" target="_blank" rel="noopener noreferrer">
-    <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.574 1.83.843 2.806.843 3.178 0 5.767-2.587 5.768-5.766 0-3.181-2.589-5.768-5.768-5.768zm3.376 8.163c-.144.404-.837.774-1.17.824-.312.045-.694.072-2.148-.535-1.745-.731-2.883-2.518-2.97-2.634-.087-.116-.708-.941-.708-1.796 0-.855.449-1.277.609-1.451.16-.174.348-.218.464-.218.116 0 .232.001.334.007.107.006.249-.041.389.296.145.348.494 1.204.537 1.292.044.088.073.19.015.305-.058.116-.087.189-.174.291-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.973 1.211.669.596 1.233.78 1.408.867.174.087.276.073.378-.044.102-.116.435-.508.552-.682.116-.174.232-.145.392-.087.16.058 1.016.479 1.19.566.174.087.291.131.334.204.043.072.043.419-.101.823z"/></svg>
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.574 1.83.843 2.806.843 3.178 0 5.767-2.587 5.768-5.766 0-3.181-2.589-5.768-5.768-5.768zm3.376 8.163c-.144.404-.837.774-1.17.824-.312.045-.694.072-2.148-.535-1.745-.731-2.883-2.518-2.97-2.634-.087-.116-.708-.941-.708-1.796 0-.855.449-1.277.609-1.451.16-.174.348-.218.464-.218.116 0 .232.001.334.007.107.006.249-.041.389.296.145.348.494 1.204.537 1.292.044.088.073.19.015.305-.058.116-.087.189-.174.291-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.973 1.211.669.596 1.233.78 1.408.867.174.087.276.073.378-.044.102-.116.435-.508.552-.682.116-.174.232-.145.392-.087.16.058 1.016.479 1.19.566.174.087.291.131.334.204.043.072.043.419-.101.823z"/></svg>
   </a>
 
   <script src="js/main.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Intersection Observer for scroll reveal animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    });
-  </script>
 </body>
 </html>
 

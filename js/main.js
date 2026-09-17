@@ -259,51 +259,28 @@ function initScrollSequence() {
 
 
 /* =====================================================
-   HEADER OBSERVER (Dark/Light mode auto switch)
+   HEADER OBSERVER (Frosted Glass on Scroll)
    ===================================================== */
 function initHeaderObserver() {
   const header = document.querySelector('.site-header');
   if (!header) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    let isDarkThemeInView = false;
-    
-    // Check if any element with 'theme-dark' is actively crossing the header zone
-    entries.forEach(entry => {
-      if (entry.isIntersecting && entry.target.classList.contains('theme-dark')) {
-        isDarkThemeInView = true;
-      }
-    });
-
-    if (isDarkThemeInView) {
-      header.classList.add('header-dark');
+  const onScroll = () => {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled', 'header-dark');
     } else {
-      // Only remove if we're sure we're in a light section.
-      // A more robust way is to observe all sections and find the one at scroll Y.
+      header.classList.remove('scrolled');
+      header.classList.add('header-dark');
     }
-  }, {
-    // Trigger when the element reaches the top of the viewport
-    rootMargin: '-10% 0px -90% 0px' 
-  });
+  };
 
-  // A more reliable way: check DOM element at point
-  window.addEventListener('scroll', () => {
-    const headerHeight = header.offsetHeight;
-    const elem = document.elementFromPoint(window.innerWidth / 2, headerHeight + 10);
-    if (elem) {
-      const section = elem.closest('section, footer');
-      if (section && section.classList.contains('theme-dark')) {
-        header.classList.add('header-dark');
-      } else if (section && section.classList.contains('theme-light')) {
-        header.classList.remove('header-dark');
-      }
-    }
-  }, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 
 
 /* =====================================================
-   EXISTING FEATURES (preserved)
+   EXISTING FEATURES (preserved & polished)
    ===================================================== */
 
 function initMobileMenu() {
@@ -342,15 +319,27 @@ function initFaq() {
     item.addEventListener('click', () => {
       const isExpanded = item.getAttribute('aria-expanded') === 'true';
       const answer = item.nextElementSibling;
+      const parentCard = item.closest('.faq-item');
+
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
           otherItem.setAttribute('aria-expanded', 'false');
-          otherItem.nextElementSibling.style.maxHeight = null;
+          if (otherItem.nextElementSibling) {
+            otherItem.nextElementSibling.style.maxHeight = null;
+          }
+          const otherCard = otherItem.closest('.faq-item');
+          if (otherCard) otherCard.classList.remove('is-active');
         }
       });
+
       item.setAttribute('aria-expanded', !isExpanded);
-      if (!isExpanded) answer.style.maxHeight = answer.scrollHeight + "px";
-      else answer.style.maxHeight = null;
+      if (!isExpanded) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        if (parentCard) parentCard.classList.add('is-active');
+      } else {
+        answer.style.maxHeight = null;
+        if (parentCard) parentCard.classList.remove('is-active');
+      }
     });
   });
 }
@@ -377,6 +366,10 @@ function initCalculator() {
     if (addons.includes('agendamento')) total += 250;
 
     resultValue.textContent = `R$ ${total}`;
+    resultValue.classList.remove('val-pop');
+    void resultValue.offsetWidth; // trigger reflow for smooth animation
+    resultValue.classList.add('val-pop');
+
     const typeLabel = { 'landing_page': 'Landing Page', 'institucional': 'Site Institucional', 'ecommerce': 'E-commerce' }[type] || 'Site';
     btnCalc.dataset.message = `Olá! Gostaria de solicitar um orçamento para um(a) ${typeLabel}. A estimativa apresentada foi de R$ ${total}.`;
   };
