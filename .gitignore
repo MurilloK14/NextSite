@@ -17,7 +17,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Ferramentas locais de comparação de design
+# Ferramentas locais de teste, preview e geradores
 comparador.html
 server.js
 preview/
+*generate*
+*test*
+*.ps1
