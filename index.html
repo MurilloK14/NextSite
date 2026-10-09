@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#080711">
   <meta name="description" content="NextSite — Presença digital de alto padrão e páginas de alta conversão para negócios que exigem excelência.">
   <title>NextSite — Presença Digital de Alto Padrão</title>
@@ -50,20 +50,31 @@
       <a href="#orcamento" class="btn btn-primary nav-cta">Quero meu site</a>
 
       <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-nav">
-        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="menu-icon-line line-1"></span>
+        <span class="menu-icon-line line-2"></span>
+        <span class="menu-icon-line line-3"></span>
       </button>
     </div>
   </header>
 
   <!-- Mobile Nav Overlay -->
   <div id="mobile-nav" class="mobile-nav-overlay" aria-hidden="true">
+    <div class="mobile-nav-top-info">
+      <div class="status-pill">
+        <span class="status-indicator"></span>
+        <span>Atendimento via WhatsApp</span>
+      </div>
+    </div>
     <ul class="mobile-nav-links">
       <li><a href="#portfolio" class="nav-link mobile-nav-link">Portfólio</a></li>
       <li><a href="#beneficios" class="nav-link mobile-nav-link">Nossa Entrega</a></li>
       <li><a href="#planos" class="nav-link mobile-nav-link">Planos</a></li>
       <li><a href="#orcamento" class="nav-link mobile-nav-link">Simulador</a></li>
     </ul>
-    <a href="#orcamento" class="btn btn-primary btn-whatsapp mobile-nav-cta" data-message="Olá! Gostaria de ter um site à altura do meu negócio.">Quero meu site <span class="arrow-icon">→</span></a>
+    <div class="mobile-nav-footer">
+      <a href="#orcamento" class="btn btn-primary btn-whatsapp mobile-nav-cta" data-message="Olá! Gostaria de ter um site à altura do meu negócio.">Quero meu site <span class="arrow-icon">→</span></a>
+      <a href="tel:5587981329735" class="mobile-nav-phone-link"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.574 1.83.843 2.806.843 3.178 0 5.767-2.587 5.768-5.766 0-3.181-2.589-5.768-5.768-5.768zm3.376 8.163c-.144.404-.837.774-1.17.824-.312.045-.694.072-2.148-.535-1.745-.731-2.883-2.518-2.97-2.634-.087-.116-.708-.941-.708-1.796 0-.855.449-1.277.609-1.451.16-.174.348-.218.464-.218.116 0 .232.001.334.007.107.006.249-.041.389.296.145.348.494 1.204.537 1.292.044.088.073.19.015.305-.058.116-.087.189-.174.291-.087.102-.183.228-.261.306-.088.087-.179.182-.077.357.102.174.453.748.973 1.211.669.596 1.233.78 1.408.867.174.087.276.073.378-.044.102-.116.435-.508.552-.682.116-.174.232-.145.392-.087.16.058 1.016.479 1.19.566.174.087.291.131.334.204.043.072.043.419-.101.823z"/></svg> (87) 98132-9735</a>
+    </div>
   </div>
 
   <main>
@@ -100,7 +111,10 @@
               <!-- Card 1 — Left -->
               <div class="glass-card card-left seq-card" data-delay="0">
                 <div class="card-accent-bar bar-purple"></div>
-                <span class="card-kicker">Sites Institucionais</span>
+                <div class="card-kicker-row">
+                  <span class="card-kicker">Sites Institucionais</span>
+                  <span class="card-step-badge">1/3</span>
+                </div>
                 <h3 class="card-title">Design autoral.<br>Autoridade imediata.</h3>
                 <div class="card-tags">
                   <span class="card-tag tag-purple">UI/UX Exclusivo</span>
@@ -112,7 +126,10 @@
               <!-- Card 2 — Top Right -->
               <div class="glass-card card-top-right seq-card" data-delay="1">
                 <div class="card-accent-bar bar-cyan"></div>
-                <span class="card-kicker">Landing Pages</span>
+                <div class="card-kicker-row">
+                  <span class="card-kicker">Landing Pages</span>
+                  <span class="card-step-badge">2/3</span>
+                </div>
                 <h3 class="card-title">Alta conversão.<br>Resultados reais.</h3>
                 <div class="card-tags">
                   <span class="card-tag tag-cyan">Carregamento &lt; 0.8s</span>
@@ -124,7 +141,10 @@
               <!-- Card 3 — Bottom Right -->
               <div class="glass-card card-bottom-right seq-card" data-delay="2">
                 <div class="card-accent-bar bar-emerald"></div>
-                <span class="card-kicker">Sistemas &amp; Plataformas</span>
+                <div class="card-kicker-row">
+                  <span class="card-kicker">Sistemas &amp; Plataformas</span>
+                  <span class="card-step-badge">3/3</span>
+                </div>
                 <h3 class="card-title">Engenharia sob<br>medida. 99.9% up.</h3>
                 <div class="card-tags">
                   <span class="card-tag tag-emerald">Painéis Sob Medida</span>
@@ -143,7 +163,7 @@
          ==================================================== -->
     <div class="dark-showcase-zone">
       <div class="dark-video-bg-container" aria-hidden="true">
-        <video class="dark-video-bg" autoplay loop muted playsinline preload="auto">
+        <video class="dark-video-bg" autoplay loop muted playsinline preload="none" poster="videos e fotos/binary.png">
           <source src="videos e fotos/codigo binario.mp4" type="video/mp4">
         </video>
         <div class="dark-video-overlay"></div>
@@ -452,6 +472,17 @@
               <button id="calc-btn-cta" class="btn btn-primary btn-calc-cta btn-whatsapp">Solicitar proposta no WhatsApp <span class="arrow-icon">→</span></button>
             </div>
           </div>
+        </div>
+
+        <!-- Mobile Live Summary Bar (Sticky at bottom on mobile when calculator is visible) -->
+        <div class="calc-mobile-summary" id="calc-mobile-summary" aria-live="polite">
+          <div class="calc-mobile-summary-left">
+            <span class="calc-mobile-label">Investimento Total</span>
+            <span class="calc-mobile-price" id="calc-mobile-price">R$ 350</span>
+          </div>
+          <button class="btn btn-primary btn-calc-mobile-cta btn-whatsapp" id="calc-btn-mobile-cta" data-message="Olá! Fiz uma simulação de site na NextSite e gostaria de solicitar uma proposta.">
+            WhatsApp <span class="arrow-icon">→</span>
+          </button>
         </div>
       </div>
     </section>
